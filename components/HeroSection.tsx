@@ -1,17 +1,17 @@
 "use client";
-import Lanyard from './interactive-elements/lanyard'
+
+
+
 import React, { useState } from 'react'
 import BlurText from "./interactive-elements/BlurText";
 import TypeWriter from './interactive-elements/TypeWriter';
-
-import Iridescence from './interactive-elements/Iridescence';
 import Image from 'next/image';
+import Spiral from './interactive-elements/Spiral';
 
-const handleAnimationComplete = () => {
-  console.log('Animation completed!');
-};
 
-const heroSection = () => {
+export default function HeroSection() {
+
+
   const [showParagraph, setShowParagraph] = useState(false);
 
   const handleAnimationComplete = () => {
@@ -21,6 +21,7 @@ const heroSection = () => {
     }, 2000);
   };
   return (
+  
     <section id='hero-section' className="hero-section">
       <Image
         src="/sign.png"           
@@ -29,16 +30,9 @@ const heroSection = () => {
         height={80}
         className="hero-logo"
       />
-      <div className="iridescence-wrapper"> 
-        <Iridescence
-          color={[0.2,0.0,0.2]}  //[0.18, 0.12, 0.36]
-          mouseReact={true}
-          amplitude={0.1}
-          speed={1.0}
-        />
-      </div>
-      <div className='hero-lanyard'>
-        <Lanyard position={[0, 0, 13]} gravity={[0, -50, 0]} />
+      <div className='hero-spiral'>
+        <div className='check'></div>
+        <Spiral width={1300} height={1300}/>
       </div>
       <div className='hero-text'>
         <BlurText
@@ -50,7 +44,7 @@ const heroSection = () => {
             className="xanh hero-heading"
           />
         <p className={`hero-p satoshithin ${showParagraph ? 'show' : ''}`} >
-            I'm a <span className='xanhitalic'>
+            I'm a <span className='petit'>
               <TypeWriter words={["Developer", "Designer", "Creator"]} />
             </span>.
         </p>
@@ -60,7 +54,7 @@ const heroSection = () => {
   )
 }
 
-export default heroSection
+
 
 
 

@@ -5,7 +5,6 @@ import HeroSection from '@/components/HeroSection';
 import Aboutme from '@/components/Aboutme';
 import Footer from '@/components/Footer';
 import Projects from '@/components/Projects';
-import FutureProjects from '@/components/FutureProjects';
 
 
 export default function Home() {
@@ -19,12 +18,11 @@ export default function Home() {
           sparkCount={8}
           duration={400}
         >
-            <HeroSection />
-        </ClickSpark>
-            <Projects />
-            <FutureProjects />
-            <Aboutme />
-            <Footer/>
+              <HeroSection />
+              <Aboutme />
+              <Projects />
+              <Footer/>
+            </ClickSpark>
         
 
     </>

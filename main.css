@@ -1,0 +1,104 @@
+/* ======================
+   Responsive & Mobile-Specific Styles
+====================== */
+
+/* Hide the mobile-only Visit button by default */
+.alpha-feature-visit {
+  display: none;
+}
+
+/* Ensure click layer is active on desktop */
+.alpha-click-layer {
+  pointer-events: auto;
+}
+
+/* Tablet & Mobile (≤768px) */
+@media (max-width: 768px) {
+  /* Stack content vertically */
+  .alpha {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .alpha-feature-heading,
+  .alpha-feature-aside {
+    align-items: center;
+    text-align: justify;
+    margin-top: 1rem;
+    padding-right: 0;
+  }
+
+  .alpha-feature-description,
+  .alpha-feature-year {
+    text-align: justify;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .alpha-feature-image-container {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: auto;
+    height: auto;
+  }
+
+  .alpha-feature-image {
+    object-fit: contain;
+  }
+
+
+  .alpha-feature-heading h1,
+  .alpha-feature-heading h2 {
+    text-align: center;
+  }
+
+  .alpha-feature-heading h1 {
+    font-size: 2rem;
+  }
+
+  .alpha-feature-heading h2 {
+    font-size: 1.2rem;
+  }
+
+  .alpha-feature-button {
+    width: fit-content;
+    margin: 1rem auto 0;
+    text-align: center;
+  }
+
+  /* Disable the overall click layer on mobile */
+  .alpha-click-layer {
+    pointer-events: none;
+  }
+
+  /* Show the mobile-only “Visit alpha” button */
+  .alpha-feature-visit {
+    display: block;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Small phones (≤480px) */
+@media (max-width: 480px) {
+  .alpha-feature-heading h1 {
+    font-size: 1.6rem;
+  }
+
+  .alpha-feature-heading h2 {
+    font-size: 1rem;
+  }
+
+  .alpha-feature-description,
+  .alpha-feature-year {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .alpha-feature-image-container {
+    max-width: none;
+    width: 100%;
+    height: auto;
+  }
+}
