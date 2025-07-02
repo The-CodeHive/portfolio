@@ -219,9 +219,6 @@ body::selection {
   transform: rotate(var(--rotate));
 }
 
-
-
-
 /* ==================================================
    styles for Hero Section
 ================================================== */
@@ -844,208 +841,6 @@ body::selection {
 
 .alpha-feature-visit {
   display: none;
-}
-
-/* ==================================================
-  Future Projects Section
-================================================== */
-.futureprojects {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.vid-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.15; /* Adjust brightness/visibility */
-  pointer-events: none;
-  filter: blur(10px);
-  z-index: 1000;  
-}
-.future-projects-content{
-  width: 70%;
-  height: auto;
-  text-align: center;
-  z-index: 2;
-  /* background-color: #00ff11; */
-}
-.future-project-heading{
-  font-size: 3rem;
-}
-.future-heading-subheading{
-  font-size: 2rem;
-}
-.future-content-p{
-  font-size:1.5rem;
-}
-.future-project-cards{
-  /* background-color: #ff0000; */
-  width: 70%;
-  height: auto;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  gap: 10rem;
-}
-
-.pixel-content {
-  color: white;
-  padding: 1rem;
-  text-align: left;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  transition: all 0.4s ease;
-  opacity: 1;
-  overflow: hidden;
-  position: relative;
-}
-
-.pixel-title {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 0;
-  transition: transform 0.4s ease;
-  z-index: 2;
-}
-
-.pixel-details {
-  opacity: 0;
-  max-height: 0;
-  transition: opacity 0.5s ease, max-height 0.5s ease;
-  overflow: hidden;
-  margin-top: 0.5rem;
-  z-index: 1;
-}
-
-.pixel-tagline {
-  font-size: 0.9rem;
-  font-style: italic;
-  color: #e2e8f0;
-  margin-bottom: 0.5rem;
-}
-
-.pixel-list {
-  font-size: 1rem;
-  list-style: disc;
-  padding-left: 1rem;
-  line-height: 1.4;
-}
-
-/* 👇 Reveal animation on hover */
-.pixel-card:hover .pixel-title,
-.pixel-card:focus-within .pixel-title {
-  transform: translateY(-1rem);
-}
-
-.pixel-card:hover .pixel-details,
-.pixel-card:focus-within .pixel-details {
-  opacity: 1;
-  max-height: 500px;
-  pointer-events: auto;
-}
-
-@media screen and (max-width: 1024px) {
-  .futureprojects {
-    padding: 2rem 1rem;
-  }
-
-  .future-projects-content {
-    width: 90%;
-  }
-
-  .future-project-heading {
-    font-size: 2.5rem;
-  }
-
-  .future-heading-subheading {
-    font-size: 1.6rem;
-  }
-
-  .future-content-p {
-    font-size: 1.3rem;
-  }
-
-  .future-project-cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-    width: 90%;
-  }
-
-  .pixel-title {
-    font-size: 2.2rem;
-  }
-
-  .pixel-list {
-    font-size: 0.95rem;
-  }
-}
-
-
-@media screen and (max-width: 768px) {
-  .futureprojects {
-    padding: 2rem 1rem;
-    height: auto; /* Let it grow with content */
-  }
-
-  .future-projects-content {
-    width: 100%;
-  }
-
-  .future-project-heading {
-    font-size: 2rem;
-  }
-
-  .future-heading-subheading {
-    font-size: 1.4rem;
-  }
-
-  .future-content-p {
-    font-size: 1.2rem;
-  }
-
-  .future-project-cards {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 3rem;
-  }
-
-  .pixel-title {
-    font-size: 2rem;
-  }
-
-  .pixel-list {
-    font-size: 0.9rem;
-  }
-
-  .vid-bg {
-    filter: blur(6px); /* Less blur on small screens if needed */
-  }
 }
 
 /* ==================================================
@@ -2032,3 +1827,12 @@ body::selection {
     --footer-subtext: #bbb;
   }
 }
+
+
+
+
+
+/* ==================================================
+   Projects main page
+================================================== */
+
