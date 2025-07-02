@@ -158,17 +158,15 @@ const Alpha = () => {
         </p>
         <TechUsed
           tech={["Next.js", "React", "Tailwind CSS", "PostgreSQL", "Vercel"]}
-          colorScheme="white"
           direction="row"
         />
-        <p className="alpha-feature-year">2024</p>
         <button
           className="alpha-feature-button satoshi"
           onClick={() =>
             window.open("https://github.com/jagdep-singh/alpha", "_blank")
           }
         >
-          Explore Code
+          Behind the Build
         </button>
 
         <button

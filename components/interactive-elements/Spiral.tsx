@@ -6,7 +6,7 @@ import { useMemo, useId } from "react"
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5))
 
 const colorPresets = {
-  white: "#fffdf1",
+  white: "var(--foreground)",
   gold: "#ffd700",
   cyan: "#00ffff",
   magenta: "#ff00ff",

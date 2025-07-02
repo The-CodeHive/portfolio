@@ -41,7 +41,7 @@ export default function HeroSection() {
             animateBy="words"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
-            className="xanh hero-heading"
+            className="satoshimedium hero-heading"
           />
         <p className={`hero-p satoshithin ${showParagraph ? 'show' : ''}`} >
             I'm a <span className='petit'>

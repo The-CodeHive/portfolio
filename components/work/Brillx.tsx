@@ -159,10 +159,8 @@ const Brillx = () => {
 
         <TechUsed
           tech={["Next.js", "Node.js", "Tailwind CSS", "Clerk", "MongoDB"]}
-          colorScheme="white"
           direction="row"
         />
-        <p className="brillx-feature-year">2025</p>
 
         <button
           className="brillx-feature-button satoshi"
@@ -170,7 +168,7 @@ const Brillx = () => {
             window.open("https://github.com/jagdep-singh/brillx", "_blank")
           }
         >
-          Explore Code
+          Behind the Build
         </button>
 
         {/* Mobile-only Visit button, visibility controlled via CSS */}

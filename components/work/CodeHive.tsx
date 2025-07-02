@@ -152,15 +152,13 @@ const CodeHive: React.FC = () => {
         </p>
         <TechUsed
           tech={["Next.js", "Node.js", "Socket.io", "CodeMirror", "WebRTC"]}
-          colorScheme="white"
           direction="row"
         />
-        <p className="feature-year">2024</p>
         <button
           className="feature-button satoshi"
           onClick={() => window.open("https://github.com/The-CodeHive/main-project", "_blank")}
         >
-          Explore Code
+          Behind the Build
         </button>
         {/* Mobile-only Visit button */}
         <button
