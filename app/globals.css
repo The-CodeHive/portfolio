@@ -34,7 +34,9 @@
 * {
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 html, body {
   overflow-x: hidden;
 }
@@ -218,6 +220,8 @@ body::selection {
 }
 
 
+
+
 /* ==================================================
    styles for Hero Section
 ================================================== */
@@ -238,16 +242,7 @@ body::selection {
 .hero-section {
   height: 120vh;
   width: 100%;
-  position: relative;
-  /* border-bottom: 1px solid transparent;
-  border-image: repeating-linear-gradient(
-    to right,
-    #444444 0 10px,
-    transparent 10px 20px
-  );
-  border-image-slice: 1; */
-
-  
+  position: relative;  
 }
 
 .hero-text {
@@ -300,293 +295,556 @@ body::selection {
   z-index: -100;
 }
 
-/* =========================
-   Responsive Styles
-   Hero Section Adaptive Layout
-========================= */
-
-/* Tablets and small laptops */
-@media screen and (max-width: 1024px) {
-  .hero-heading {
-    font-size: 3.5rem;
-  }
-
-  .hero-p {
-    font-size: 1.6rem;
-  }
-
-  .hero-logo {
-    width: 80px;
-    left: 1.5rem;
-    top: 1rem;
-  }
-
-  .hero-text {
-    left: 1rem;
-    padding: 1rem 1.5rem;
-    max-width: 90%;
-  }
-
-  .hero-spiral {
-    left: 30%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-/* Mobile devices */
-@media screen and (max-width: 768px) {
-  .hero-section {
-    height: 100vh;
-    overflow-y: auto;
-    padding-top: 3rem;
-  }
-
-  .hero-text {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    text-align: center;
-    margin: 2rem auto;
-    padding: 1rem;
-    backdrop-filter: blur(3px);
-    width: 90%;
-  }
-
-  .hero-heading {
-    font-size: 2.6rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .hero-p {
-    font-size: 1.2rem;
-    text-align: center;
-    transform: none;
-    position: relative;
-    top: auto;
-    right: auto;
-  }
-
-  .hero-logo {
-    width: 65px;
-    top: 1rem;
-    left: 1rem;
-  }
-
-  .hero-spiral {
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .hero-section {
-    height: 100vh;
-    overflow: hidden;
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    text-align: center;
-  }
-
-  .hero-text {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    text-align: center;
-    margin: 0 auto;
-    padding: 1rem 0.5rem;
-    backdrop-filter: blur(10px);
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-heading {
-    font-size: 2.2rem;
-    margin-bottom: 0.6rem;
-    text-align: center;
-    width: 100%;
-    align-items: center; 
-    justify-content: center; 
-  }
-
-  .hero-p {
-    font-size: 1.05rem;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
-
-  .hero-logo {
-    width: 55px;
-    top: 1rem;
-    left: 1rem;
-  }
-
-  .hero-spiral {
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-  }
-}
-
-
 /* ==================================================
-   Project Section
+  About Me Section
 ================================================== */
-.distortion-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+.aboutme {
   width: 100%;
-  height: 100%;
-  z-index: 0;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   overflow: hidden;
-  filter: brightness(0.4) saturate(100%) sepia(100%) hue-rotate(280deg);
-  pointer-events: auto  ; 
 }
 
-.work-content{
-  width: 100%;
-  height: 100vh; 
-  position: relative;
-}
-
-.scroll-reveal-text{
-  font-size: 2rem;
-  font-weight: 100;
-}
-.work-container {
-  color: #1b1b1b;
-  text-align: right;
-  width: 100%;
-  height: 100%;
-  font-size: 2rem;
-  padding: 2rem;
-  background-color: rgba(248, 105, 105, 0);
-  backdrop-filter: blur(1px);
-  position: relative;
-  z-index: 1;
-  pointer-events: none;
-}
-.work-text{
-  position: absolute;
-  bottom: 2rem;         
-  right: 10rem;        
-  width: 50%;
-  height: auto;        
-  text-align: right;
-  padding-bottom: 5rem;
-  color: white;
-}
-.work-heading {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.work-heading::after {
+.aboutme::before {
   content: "";
   position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  width: 100%;
-  height: 2px;
-}
-.work-divider {
-  border: none;
-  height: 2px;
-  background-color: rgba(160, 160, 160, 0.712); /* or gray/your theme */
-  margin: 0.5rem 0;
-  animation: expandLineBlur 3s ease-out 3s forwards;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  mask-image: linear-gradient(to bottom, transparent 0rem, black 5rem);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0rem, black 4rem);
+  pointer-events: none;
 }
 
-.work-p{
-  font-size: 2rem;
-  font-family: "Satoshi", sans-serif;
-  font-weight: 100;
+
+.aboutme-container {
+  width: 80%;
+  max-width: 1200px;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+}
+
+.aboutme-heading {
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.5px;
+}
+
+.aboutme-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.left-text,
+.right-text {
+  flex: 1 1 45%;
+  font-size: 1.25rem;
+  line-height: 1.7;
   text-align: justify;
 }
 
-.work-text, .work-heading, .work-p, .scroll-reveal-text {
-  pointer-events: auto; 
-}
-/* ============================
-   Responsive Styles for Work Section
-   100vh preserved on all devices
-============================ */
-
-/* Tablets and small laptops */
-@media screen and (max-width: 1024px) {
-  .work-text {
-    width: 70%; /* Increase width for better wrapping */
-    right: 4rem; /* Reduce from 10rem */
-    padding-bottom: 3rem;
-  }
-
-  .work-heading {
-    font-size: 3rem;
-  }
-
-  .work-p {
-    font-size: 1.6rem;
-  }
-
-  .scroll-reveal-text {
-    font-size: 1.6rem;
-  }
+.left-text strong {
+  font-weight: bold;
+  font-style: italic;
 }
 
-/* Mobile devices */
-@media screen and (max-width: 768px) {
-  .work-content {
-    height: 100vh; /* Keep full screen height */
-    overflow-y: auto; /* Allow scrolling if content overflows */
+.about-link {
+  color: var(--foreground);
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: opacity 0.3s ease;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.about-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--foreground);
+  transition: width 0.4s ease-in-out;
+}
+
+.about-link:hover::after {
+  width: 100%;
+}
+
+.about-link:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .aboutme-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 
-  .work-text {
-    position: static; /* Remove absolute positioning */
-    width: 100%;
-    text-align: center;
-    padding: 2rem 1rem;
-    padding-bottom: 3rem;
+  .aboutme-content {
+    flex-direction: column;
   }
 
-  .work-heading {
-    font-size: 2.5rem;
+  .left-text,
+  .right-text {
+    flex: 1 1 100%;
+    font-size: 1.1rem;
   }
+}
 
-  .work-p {
-    font-size: 1.4rem;
-    text-align: left; /* Easier reading on mobile */
-  }
+/* ==================================================
+   CodeHive
+================================================== */
+.codehive {
+  position: relative;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
 
-  .scroll-reveal-text {
-    font-size: 1.4rem;
-    text-align: left;
-  }
+/* 🔁 Link layer */
+.codehive-click-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
 
-  .work-container {
+/* Content layers above link */
+.feature-heading,
+.feature-aside,
+.feature-button {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-overlay {
+  color: var(--foreground);
+  mix-blend-mode: difference; 
+  position: absolute;
+  pointer-events: none;
+  background: rgba(30, 30, 30, 0);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--foreground);
+  border-radius: 25px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  z-index: 3;
+  transform: scale(0.95);
+}
+.feature-overlay.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.feature-heading {
+  flex: 1 1 0;
+  text-align: justify;
+}
+.feature-heading h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin: 0;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.feature-heading h2 {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  margin: 0;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.feature-image-container {
+  position: relative;
+  flex: 0 0 400px;
+  max-width: 90vw;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+.feature-image-container:hover {
+  transform: scale(1.03);
+}
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: invert(100%);
+}
+
+.feature-aside {
+  padding-right: 2rem;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: justify;
+}
+.feature-description,
+.feature-year {
+  max-width: 400px;
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+.feature-button {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--foreground);
+  border: 1px solid var(--foreground);
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(2px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+.feature-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile-only Visit button */
+.feature-visit {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .codehive {
+    flex-direction: column;
+    height: auto;
     padding: 1rem;
-    font-size: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  /* Disable click layer on mobile */
+  .codehive-click-layer {
+    pointer-events: none;
+  }
+
+  .feature-heading {
+    text-align: center;
+    flex: none;
+  }
+
+  .feature-aside {
+    text-align: center;
+    align-items: center;
+    margin-top: 1rem;
+    flex: none;
+  }
+
+  .feature-visit {
+    display: block;
+    margin-top: 0.5rem;
   }
 }
 
-/* .distortion-wrapper {
-  pointer-events: none;
+@media (max-width: 480px) {
+  .feature-heading h1 {
+    font-size: 1.6rem;
+  }
+  .feature-heading h2 {
+    font-size: 1rem;
+  }
+  .feature-description,
+  .feature-year {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+  .feature-image-container {
+    max-width: none;
+    width: 100%;
+    height: auto;
+  }
 }
-.distortion-wrapper canvas,
-.distortion-wrapper > * 
-{
+
+/* ==================================================
+   Brillx Section
+================================================== */
+.brillx {
+  position: relative;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+/* Link layer */
+.brillx-click-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* Content layers */
+.brillx-feature-heading,
+.brillx-feature-aside,
+.brillx-feature-button {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating overlay */
+.brillx-feature-overlay {
+  mix-blend-mode: difference; 
+  position: absolute;
   pointer-events: none;
-} */
+  background: rgba(50, 50, 50, 0);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--foreground);
+  color: var(--foreground);
+  border-radius: 25px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  z-index: 3;
+  transform: scale(0.95);
+}
+.brillx-feature-overlay.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Headings */
+.brillx-feature-heading {
+  flex: 1 1 0;
+  text-align: justify;
+}
+.brillx-feature-heading h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin: 0;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.brillx-feature-heading h2 {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+/* Image */
+.brillx-feature-image-container {
+  position: relative;
+  flex: 0 0 400px;
+  max-width: 90vw;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.brillx-feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: invert(100%);
+}
+
+/* Aside */
+.brillx-feature-aside {
+  padding-right: 2rem;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: justify;
+}
+.brillx-feature-description,
+.brillx-feature-year {
+  max-width: 400px;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Button */
+.brillx-feature-button {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--foreground);
+  border: 1px solid var(--foreground);
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(2px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+.brillx-feature-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* ==================================================
+   Alpha Section 
+================================================== */
+
+.alpha {
+  position: relative;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+/* Link layer */
+.alpha-click-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* Content layers */
+.alpha-feature-heading,
+.alpha-feature-aside,
+.alpha-feature-button {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating overlay */
+.alpha-feature-overlay {
+  mix-blend-mode: difference; 
+  position: absolute;
+  pointer-events: none;
+  background: rgba(50, 50, 50, 0);
+  backdrop-filter: blur(5px);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--foreground);
+  color: var(--foreground);
+  border-radius: 25px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  z-index: 3;
+  transform: scale(0.95);
+}
+.alpha-feature-overlay.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Headings */
+.alpha-feature-heading {
+  flex: 1 1 0;
+  text-align: justify;
+}
+.alpha-feature-heading h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin: 0;
+  line-height: 1.2;
+  font-weight: bold;
+}
+.alpha-feature-heading h2 {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+/* Image */
+.alpha-feature-image-container {
+  position: relative;
+  flex: 0 0 400px;
+  max-width: 90vw;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.alpha-feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: invert(100%);
+}
+
+.alpha-feature-aside {
+  
+  padding-right: 2rem;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: justify;
+}
+.alpha-feature-description,
+.alpha-feature-year {
+  max-width: 400px;
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+
+
+.alpha-feature-button {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--foreground);
+  border: 1px solid var(--foreground);
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(2px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+.alpha-feature-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.alpha-feature-visit {
+  display: none;
+}
 
 /* ==================================================
   Future Projects Section
@@ -790,115 +1048,6 @@ body::selection {
   }
 }
 
-
-/* ==================================================
-  About Me Section
-================================================== */
-.aboutme {
-  width: 100%;
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.aboutme::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(5px);
-  mask-image: linear-gradient(to bottom, transparent 0rem, black 5rem);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0rem, black 4rem);
-  pointer-events: none;
-}
-
-
-.aboutme-container {
-  width: 80%;
-  max-width: 1200px;
-  padding: 4rem 2rem;
-  box-sizing: border-box;
-}
-
-.aboutme-heading {
-  font-size: 3rem;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 3rem;
-  letter-spacing: 0.5px;
-}
-
-.aboutme-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-
-.left-text,
-.right-text {
-  flex: 1 1 45%;
-  font-size: 1.25rem;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.left-text strong {
-  font-weight: bold;
-  font-style: italic;
-}
-
-.about-link {
-  color: var(--foreground);
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  text-decoration: none;
-  padding-bottom: 2px;
-  transition: opacity 0.3s ease;
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-}
-
-.about-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background-color: var(--foreground);
-  transition: width 0.4s ease-in-out;
-}
-
-.about-link:hover::after {
-  width: 100%;
-}
-
-.about-link:hover {
-  opacity: 0.7;
-}
-
-@media (max-width: 768px) {
-  .aboutme-heading {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .aboutme-content {
-    flex-direction: column;
-  }
-
-  .left-text,
-  .right-text {
-    flex: 1 1 100%;
-    font-size: 1.1rem;
-  }
-}
-
-
 /* ==================================================
    Footer
 ================================================== */
@@ -1037,7 +1186,6 @@ body::selection {
     flex-direction: column;
   }
 }
-
 
 /* ==================================================
    Brillx Section
@@ -1839,7 +1987,12 @@ body::selection {
    Overlay fixes, light mode
 ====================== */
 @media (prefers-color-scheme: light) {
-  
+  .hero-logo,
+  .feature-image,
+  .brillx-feature-image,
+  .alpha-feature-image {
+    filter: none;
+  }
   .feature-overlay {
     color: var(--foreground);
     mix-blend-mode: normal; 
@@ -1856,12 +2009,7 @@ body::selection {
   }
 }
 
-.hero-logo,
-.feature-image,
-.brillx-feature-image,
-.alpha-feature-image {
-  filter: none;
-}
+
 
 @media (prefers-color-scheme: dark) {
   .feature-image,
