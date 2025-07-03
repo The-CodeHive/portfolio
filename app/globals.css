@@ -222,7 +222,6 @@ body::selection {
 /* ==================================================
    styles for Hero Section
 ================================================== */
-
 .hero-logo {
   position: absolute;
   top: 1rem;
@@ -290,6 +289,43 @@ body::selection {
   left: 36%;
   transform: translateY(-50%);
   z-index: -100;
+}
+@media screen and (max-width: 768px) {
+  .hero-heading {
+    font-size: 10vw;
+  }
+
+  .hero-p {
+    font-size: 5vw;
+    margin-top: 1rem;
+  }
+
+  .hero-logo {
+    width: 60px;
+    top: 0.5rem;
+    left: 1rem;
+  }
+
+  .hero-text {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-heading {
+    font-size: 15vw;
+    line-height: 1.1;
+  }
+
+  .hero-p {
+    font-size: 8vw;
+    line-height: 1.3;
+    padding-top: 3rem;
+  }
+
+  .hero-logo {
+    width: 60px;
+  }
 }
 
 /* ==================================================
@@ -480,9 +516,9 @@ body::selection {
   overflow: hidden;
   transition: transform 0.4s ease;
 }
-.feature-image-container:hover {
+/* .feature-image-container:hover {
   transform: scale(1.03);
-}
+} */
 .feature-image {
   width: 100%;
   height: 100%;
@@ -545,16 +581,30 @@ body::selection {
     pointer-events: none;
   }
 
-  .feature-heading {
-    text-align: center;
-    flex: none;
-  }
-
+  .feature-heading,
   .feature-aside {
-    text-align: center;
     align-items: center;
+    text-align: justify;
     margin-top: 1rem;
-    flex: none;
+    padding-right: 0 !important; 
+  }
+  .feature-image-container {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: auto;
+    height: auto;
+  }
+  .feature-image {
+    object-fit: contain;
+  }
+  .feature-heading h1,
+  .feature-heading h2 {
+    text-align: center;
+  }
+  .feature-button {
+    width: fit-content;
+    margin: 1rem auto 0;
+    text-align: center;
   }
 
   .feature-visit {
@@ -567,14 +617,17 @@ body::selection {
   .feature-heading h1 {
     font-size: 1.6rem;
   }
+
   .feature-heading h2 {
     font-size: 1rem;
   }
+
   .feature-description,
   .feature-year {
     font-size: 0.95rem;
     padding: 0 0.5rem;
   }
+
   .feature-image-container {
     max-width: none;
     width: 100%;

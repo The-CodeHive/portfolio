@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Jagdeep Singh",
-  description: "All about me is here.. if u wan to hire me🤞",
+  description: "All about me is here.. if u want to hire me🤞",
   icons: {
     icon: "/favicon.ico", 
   },
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+          <main>{children}</main>
       </body>
     </html>
   );

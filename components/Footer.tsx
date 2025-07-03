@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
+
   return (
-    <footer className="custom-footer satoshi">
+    <footer className="custom-footer satoshi" >
       <div className="footer-top">
         {/* Left Column - Name & Title */}
         <div className="footer-column left">

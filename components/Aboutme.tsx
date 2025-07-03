@@ -64,7 +64,7 @@ const Aboutme: React.FC = () => {
             <p>
               Collaboration fuels me—working cross‑functionally to deliver far better outcomes than I ever could alone—and I’m always improving, growing, and executing to the highest standard possible. Every project I take on is tethered to a larger mission: connecting craft to impact, and leaving the world better than I found it.
             </p>
-            <a href="#" className="about-link xanhitalic">
+            <a href="/About" className="about-link xanhitalic">
                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 30 30"
