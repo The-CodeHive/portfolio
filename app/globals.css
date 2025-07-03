@@ -286,7 +286,7 @@ body::selection {
 .hero-spiral {
   position: absolute;
   top: 45%;
-  left: 36%;
+  left: 38%;
   transform: translateY(-50%);
   z-index: -100;
 }
