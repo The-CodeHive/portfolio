@@ -1,0 +1,126 @@
+:root {
+  --background: #fffdf1;
+  --foreground: #281c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #16171d;
+    --foreground: #fffdf1;
+  }
+}
+
+.More-About-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.More-About-name {
+  background-color: #16171d00;
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  position: absolute;
+  font-size: 1.5rem;
+  top: 1rem;
+  right: 1rem;
+  padding: 2rem;
+  color: var(--foreground);
+}
+
+.More-About-spiral {
+  position: absolute;
+  top: 10%;
+  left: -20%;
+  transform: translateY(-50%);
+  z-index: -100;
+  max-width: 60vw;
+  height: auto;
+}
+
+.More-About-Content {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(5px);
+  border-radius: 1rem;
+  position: absolute;
+  width: 90%;
+  max-width: 40rem;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 1;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.More-About-heading {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.line1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.line2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: var(--foreground);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .More-About-name {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+
+  .More-About-heading {
+    font-size: 2rem;
+  }
+
+  .More-About-Content {
+    width: 90%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+  }
+
+  .More-About-heading {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .More-About-name {
+    font-size: 2rem;
+    left: 1.6rem;
+    top: 5;
+    text-align: center;
+
+  }
+  .More-About-spiral {
+    right: -10%;
+    top: 0%;
+    max-width: 80vw;
+  }
+
+  .More-About-heading {
+    font-size: 1.6rem;
+  }
+  .More-About-Content {
+    top: 40%;
+    width: 90%;
+    padding: 1rem;
+    text-align: justify;
+    backdrop-filter: blur(15px);
+  }
+}

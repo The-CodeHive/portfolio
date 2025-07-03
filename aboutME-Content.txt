@@ -1,0 +1,73 @@
+Believe
+Stacks of notes and diagrams scattered on a wooden desk.
+
+Building strong foundations — driven by curiosity, learning, and collaboration.
+
+Every great project begins with a question. I believe in diving deep — understanding not just the “what,” but the “why” behind every line of code. My journey as a software developer is fueled by an endless curiosity and a passion for transforming ideas into impactful solutions.
+
+Includes: Problem-Solving → Strategy → Technical Planning
+
+Whether it’s researching the latest web technologies or finding ways to automate workflows with Python, I’m committed to growing both my skills and the value I deliver.
+
+Create
+A colorful code editor open beside a chessboard.
+
+Transforming ideas into robust, user-focused applications.
+
+From dynamic user interfaces to smart backend logic, I love crafting digital experiences that are both beautiful and performant. My skill set spans HTML, CSS, JavaScript, React, Next.js, and Python — tools I wield to create web applications that feel seamless and responsive.
+
+I’m meticulous about clean design, intuitive UX, and writing maintainable code. Every project is an opportunity to experiment, learn, and push boundaries.
+
+Includes: Frontend Development → Scripting & Automation → UI/UX Design
+
+Action
+Terminal windows filled with deployment logs and a coffee mug beside the keyboard.
+
+Delivering results — launching, refining, and collaborating for impact.
+
+I believe in code that doesn’t just work — but works brilliantly. From deploying applications to collaborating in teams, I ensure projects move from concept to reality. I’m dedicated to continuous improvement, version control discipline, and working efficiently with tools like Git and Visual Studio Code.
+
+Includes: Development → Deployment → Collaboration
+
+My goal is to deliver solutions that bring confidence, clarity, and momentum — whether to clients, teammates, or users.
+
+Experience & Education
+A classroom whiteboard filled with algorithms and blockchain diagrams.
+
+Bachelor of Engineering, Computer Science (Specialization: Blockchain Technology)
+Chandigarh University, Chandigarh
+
+Higher Secondary & Secondary Education
+DBMS Kadma High School, Jamshedpur, Jharkhand
+
+Projects
+Screens glowing with live code and AI conversations.
+
+AI Chatbot — ALPHA
+An intelligent chatbot designed to engage in dynamic conversations, providing real-time assistance and personalized responses. Built to understand user queries and deliver helpful, context-aware replies.
+
+Collaborative Code Editor — CodeHive
+A powerful real-time collaborative code editor enabling seamless teamwork for developers. Features support for multiple programming languages, live editing, version control, and debugging, helping teams code, debug, and share projects efficiently.
+
+Beyond Code
+A chessboard mid-game, pieces locked in strategic battle.
+
+As captain of my university’s chess team, I’ve competed in All-India tournaments, leading my team to achieve notable national rankings. Chess has honed my analytical thinking, strategic planning, and ability to stay focused under pressure — skills that translate directly into my problem-solving as a developer.
+
+Skills
+A terminal window, lines of Python and JavaScript scrolling.
+
+Programming Languages: Python, C++
+
+Frameworks & Tools: React, Next.js, Linux
+
+Software & Utilities: Microsoft Excel, Git, Visual Studio Code
+
+Core Strengths: Data Analysis, Problem-Solving, Team Collaboration
+
+A portrait of a developer looking thoughtfully at glowing lines of code.
+
+I’m Jagdeep — passionate about turning complexity into simplicity through code. I’m always eager to learn, collaborate, and create software that leaves a positive impact.
+
+Let’s build something extraordinary together.
+
