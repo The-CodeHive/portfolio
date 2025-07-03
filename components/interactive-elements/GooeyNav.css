@@ -27,7 +27,11 @@
   transition: opacity 0.3s ease;
   mix-blend-mode: difference;
 }
-
+@media (prefers-color-scheme: light) {
+  .glassmorphism-nav-container {
+    mix-blend-mode: normal;
+  }
+}
 
 .glassmorphism-nav-container nav ul {
   display: flex;
@@ -41,7 +45,7 @@
   display: block;
   padding: 0.5em 1em;
   border-radius: 1rem;
-  color: var(--foreground);
+  color: var(--foreground); 
   text-decoration: none;
   transition: background 0.2s ease;
 }

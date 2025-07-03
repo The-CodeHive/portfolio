@@ -7,9 +7,6 @@ import { usePathname } from "next/navigation"
 
 import "./GooeyNav.css"
 
-/* ------------------------------------------------------------------ */
-/* 1. Types                                                            */
-/* ------------------------------------------------------------------ */
 export interface GlassmorphismNavItem {
   label: string
   href: string
@@ -27,9 +24,6 @@ export interface GlassmorphismNavProps {
   alwaysVisible?: boolean
 }
 
-/* ------------------------------------------------------------------ */
-/* 2. Component                                                        */
-/* ------------------------------------------------------------------ */
 const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
   items,
   animationTime = 0.5,
@@ -41,13 +35,11 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
   initialActiveIndex,
   alwaysVisible = false,
 }) => {
-  /* Refs ----------------------------------------------------------- */
   const containerRef = useRef<HTMLDivElement | null>(null)
   const navRef = useRef<HTMLUListElement | null>(null)
   const filterRef = useRef<HTMLSpanElement | null>(null)
   const textRef = useRef<HTMLSpanElement | null>(null)
 
-  /* Active-tab detection via route --------------------------------- */
   const pathname = usePathname()
   const pathIndex = items.findIndex((i) => i.href.toLowerCase() === pathname.toLowerCase())
   const startIndex = initialActiveIndex ?? (pathIndex >= 0 ? pathIndex : 0)
@@ -56,9 +48,6 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
   const [isNavVisible, setIsNavVisible] = useState<boolean>(false)
   const [hasHeroFooter, setHasHeroFooter] = useState<boolean | null>(null)
 
-  /* ----------------------------------------------------------------
-     3. Enhanced visibility logic with better element detection
-  ------------------------------------------------------------------ */
   useEffect(() => {
     if (typeof window === "undefined") return
 
@@ -137,9 +126,6 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
     }
   }, [alwaysVisible])
 
-  /* ----------------------------------------------------------------
-     4. Enhanced fade in/out animation with GSAP
-  ------------------------------------------------------------------ */
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
@@ -171,16 +157,11 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
     }
   }, [isNavVisible])
 
-  /* Sync active index with current route -------------------------- */
   useEffect(() => {
     if (pathIndex >= 0 && pathIndex !== activeIndex) {
       setActiveIndex(pathIndex)
     }
   }, [pathname, pathIndex, activeIndex])
-
-  /* ----------------------------------------------------------------
-     5. Position "goo" filter & cloned text on active tab
-  ------------------------------------------------------------------ */
   useEffect(() => {
     const navEl = navRef.current
     const filterEl = filterRef.current
@@ -218,9 +199,6 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
     return () => ro.disconnect()
   }, [activeIndex])
 
-  /* ----------------------------------------------------------------
-     6. Enhanced particle-burst helpers
-  ------------------------------------------------------------------ */
   const noise = (n = 1) => n / 2 - Math.random() * n
 
   const getXY = (d: number, i: number, total: number) => {
@@ -273,9 +251,6 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
     }
   }
 
-  /* ----------------------------------------------------------------
-     7. Event handlers
-  ------------------------------------------------------------------ */
   const handleClick = (idx: number) => {
     if (idx === activeIndex) return
     setActiveIndex(idx)
@@ -302,9 +277,6 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
     }
   }
 
-  /* ----------------------------------------------------------------
-     8. Render
-  ------------------------------------------------------------------ */
   return (
     <div className="glassmorphism-nav-container satoshi" ref={containerRef}>
       <nav>

@@ -48,8 +48,8 @@ body {
   font-family: 'Xanh Mono',monospace;
 }
 body::selection {
-  background-color: var(--foreground); /* your color */
-  color: var(--background);            /* text color when selected */
+  background-color: var(--foreground); 
+  color: var(--background);            
 }
 .page-wrapper {
   position: relative;
@@ -527,9 +527,7 @@ body::selection {
   overflow: hidden;
   transition: transform 0.4s ease;
 }
-/* .feature-image-container:hover {
-  transform: scale(1.03);
-} */
+
 .feature-image {
   width: 100%;
   height: 100%;
