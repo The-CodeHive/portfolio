@@ -417,6 +417,11 @@ body::selection {
 .about-link:hover {
   opacity: 0.7;
 }
+.aboutme-icon {
+  fill: currentColor;
+  stroke: currentColor;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
 
 @media (max-width: 768px) {
   .aboutme-heading {

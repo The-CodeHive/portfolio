@@ -66,12 +66,13 @@ const Aboutme: React.FC = () => {
             </p>
             <a href="/About" className="about-link xanhitalic">
                <svg
+               className="aboutme-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 30 30"
                 width="20"
                 height="20"
-                fill="white"
-                stroke="white"
+                // fill="white"
+                // stroke="white"
                 style={{ marginRight: "8px", verticalAlign: "middle" }}
               >
                 <path xmlns="http://www.w3.org/2000/svg"
