@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from "react"
 import gsap from "gsap"
 import { usePathname } from "next/navigation"
 
-import "./Gooeynav.css"
+import "./GooeyNav.css"
 
 /* ------------------------------------------------------------------ */
 /* 1. Types                                                            */
