@@ -17,7 +17,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id='hero-section' className="hero-section">
+    <section id="hero-section" className="hero-section">
        <Image
         src="/sign.png"           
         alt="Logo"

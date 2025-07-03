@@ -1,0 +1,80 @@
+:root {
+  --background: #fffdf1;
+  --foreground: #281c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #16171d;
+    --foreground: #fffdf1;
+
+  }
+}
+
+.glassmorphism-nav-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  background-color: #00000000;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--foreground);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+
+.glassmorphism-nav-container nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.glassmorphism-nav-container nav ul li a {
+  display: block;
+  padding: 0.5em 1em;
+  border-radius: 1rem;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.glassmorphism-nav-container nav ul li.active a {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.glassmorphism-nav-container nav ul li a:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .glassmorphism-nav-container {
+    bottom: 15px;
+    padding: 0.5rem 1rem;
+  }
+
+  .glassmorphism-nav-container nav ul {
+    gap: 0.75rem;
+  }
+
+  .glassmorphism-nav-container nav ul li a {
+    padding: 0.5em 0.8em;
+    font-size: 0.9em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glassmorphism-nav-container,
+  .glassmorphism-nav-container nav ul li a {
+    transition: none;
+  }
+}

@@ -51,7 +51,10 @@ body::selection {
   background-color: var(--foreground); /* your color */
   color: var(--background);            /* text color when selected */
 }
-
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
 
 
 /* ==================================================
@@ -218,6 +221,9 @@ body::selection {
   will-change: transform;
   transform: rotate(var(--rotate));
 }
+
+
+
 
 /* ==================================================
    styles for Hero Section
