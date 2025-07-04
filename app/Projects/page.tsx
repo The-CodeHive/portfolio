@@ -2,6 +2,7 @@
 import Spiral from '@/components/interactive-elements/Spiral'
 import React from 'react'
 import './project.css'
+import FooterSecondary from '@/components/FooterSecondry'
 
 const Projects = () => {
   return (
@@ -19,6 +20,7 @@ const Projects = () => {
 
       </div>
     </section>
+    <FooterSecondary />
     </main>
   )
 }

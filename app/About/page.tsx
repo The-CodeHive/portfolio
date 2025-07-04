@@ -1,6 +1,7 @@
 import React from 'react'
 import './about.css'
 import Spiral from '@/components/interactive-elements/Spiral'
+import FooterSecondary from '@/components/FooterSecondry'
 const MoreAboutMe = () => {
   return (
     <main>
@@ -17,6 +18,7 @@ const MoreAboutMe = () => {
 
         </div>
       </section>
+      <FooterSecondary />
     </main>
   )
 }

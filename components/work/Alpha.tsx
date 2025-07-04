@@ -12,7 +12,7 @@ const Alpha = () => {
   const linkLayerRef = useRef<HTMLAnchorElement>(null);
   const containerRef = useRef<HTMLElement>(null);
 
-  const projectLink = "https://your-alpha-link.com"; // ✏️ Replace with real link
+  const projectLink = "https://example.com"; 
   const [isOverlayVisible, setOverlayVisible] = useState(false);
 
   useEffect(() => {
@@ -163,7 +163,7 @@ const Alpha = () => {
         <button
           className="alpha-feature-button satoshi"
           onClick={() =>
-            window.open("https://github.com/jagdep-singh/alpha", "_blank")
+            window.open("https://github.com/jagdep-singh", "_blank")
           }
         >
           Behind the Build

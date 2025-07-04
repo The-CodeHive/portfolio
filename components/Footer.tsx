@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Left Column - Name & Title */}
         <div className="footer-column left">
           <h2 className="footer-name">Jagdeep Singh</h2>
-          <p className="footer-title">Web Developer</p>
+          <p className="footer-title">Software Engineer & Designer</p>
         </div>
 
         {/* Center Column - Navigation */}
