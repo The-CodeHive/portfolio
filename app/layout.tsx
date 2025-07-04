@@ -2,6 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import './globals.css'
 import GooeyNav from '@/components/interactive-elements/GooeyNav'
+import Providers from './providers'
 
 export const metadata: Metadata = {
   title: 'Jagdeep Singh',
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="page-wrapper">
-        {/* GooeyNav will auto-hide when #hero-section or #footer intersect */}
+        <Providers>
         <GooeyNav
           items={navItems}
           particleCount={15}
@@ -35,8 +36,9 @@ export default function RootLayout({
           timeVariance={300}
           colors={[1, 2, 3, 1, 2, 3, 1, 4]}
         />
-
+      
         <main>{children}</main>
+      </Providers>
       </body>
     </html>
   )

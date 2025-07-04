@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import Aboutme from '@/components/Aboutme';
 import Footer from '@/components/Footer';
 import Projects from '@/components/Projects';
+import { main } from 'framer-motion/m';
 
 export default function Home() {
   const [foregroundColor, setForegroundColor] = useState('#000'); // fallback color
@@ -18,17 +19,19 @@ export default function Home() {
   }, []);
 
   return (
-    <ClickSpark
-      sparkColor={foregroundColor}
-      sparkSize={10}
-      sparkRadius={15}
-      sparkCount={8}
-      duration={400}
-    >
-      <HeroSection />
-      <Aboutme />
-      <Projects />
-      <Footer />
-    </ClickSpark>
+    <main>
+      <ClickSpark
+        sparkColor={foregroundColor}
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+      >
+        <HeroSection />
+        <Aboutme />
+        <Projects />
+        <Footer />
+      </ClickSpark>
+    </main>
   );
 }

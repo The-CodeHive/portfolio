@@ -6,6 +6,7 @@ import gsap from "gsap"
 import { usePathname } from "next/navigation"
 
 import "./GooeyNav.css"
+import { Link } from "next-transition-router"
 
 export interface GlassmorphismNavItem {
   label: string
@@ -48,83 +49,60 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
   const [isNavVisible, setIsNavVisible] = useState<boolean>(false)
   const [hasHeroFooter, setHasHeroFooter] = useState<boolean | null>(null)
 
+  
   useEffect(() => {
-    if (typeof window === "undefined") return
+  if (typeof window === "undefined") return;
 
-    let rafId: number
-    let retryCount = 0
-    const maxRetries = 10
-    const retryDelay = 50
+  let observer: IntersectionObserver | null = null;
+  let retryCount = 0;
+  const maxRetries = 10;
+  const retryDelay = 100;
 
-    const checkElements = () => {
-      const hero = document.getElementById("hero-section")
-      const footer = document.querySelector("footer")
+  const setupObserver = () => {
+    const hero = document.getElementById("hero-section");
+    const footer = document.querySelector("footer");
 
-      if (alwaysVisible) {
-        setHasHeroFooter(false)
-        setIsNavVisible(true)
-        return
-      }
-
-      if ((!hero || !footer) && retryCount < maxRetries) {
-        retryCount++
-        rafId = requestAnimationFrame(() => {
-          setTimeout(checkElements, retryDelay)
-        })
-        return
-      }
-
-      const elementsExist = !!(hero && footer)
-      setHasHeroFooter(elementsExist)
-
-      if (!elementsExist) {
-        setIsNavVisible(true)
-        return
-      }
-
-      const updateVisibility = () => {
-        if (!hero || !footer) return
-
-        const heroRect = hero.getBoundingClientRect()
-        const footerRect = footer.getBoundingClientRect()
-        const winH = window.innerHeight
-
-        const heroInView = heroRect.bottom > 0 && heroRect.top < winH
-        const footerInView = footerRect.bottom > 0 && footerRect.top < winH
-
-        const shouldShow = !heroInView && !footerInView
-        setIsNavVisible(shouldShow)
-      }
-
-      updateVisibility()
-
-      let ticking = false
-      const onScroll = () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            updateVisibility()
-            ticking = false
-          })
-          ticking = true
-        }
-      }
-
-      window.addEventListener("scroll", onScroll, { passive: true })
-      window.addEventListener("resize", updateVisibility)
-
-      return () => {
-        window.removeEventListener("scroll", onScroll)
-        window.removeEventListener("resize", updateVisibility)
-      }
+    if (alwaysVisible) {
+      setHasHeroFooter(false);
+      setIsNavVisible(true);
+      return;
     }
 
-    const cleanup = checkElements()
-
-    return () => {
-      if (rafId) cancelAnimationFrame(rafId)
-      cleanup?.()
+    if ((!hero || !footer) && retryCount < maxRetries) {
+      retryCount++;
+      setTimeout(setupObserver, retryDelay);
+      return;
     }
-  }, [alwaysVisible])
+
+    if (!hero || !footer) {
+      setHasHeroFooter(false);
+      setIsNavVisible(true);
+      return;
+    }
+
+    setHasHeroFooter(true);
+
+    observer = new IntersectionObserver(
+      (entries) => {
+        const isAnyVisible = entries.some((entry) => entry.isIntersecting);
+        setIsNavVisible(!isAnyVisible);
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(hero);
+    observer.observe(footer);
+  };
+
+  // Wait 100ms after transition to ensure DOM is rendered
+  const timeoutId = setTimeout(setupObserver, 100);
+
+  return () => {
+    if (observer) observer.disconnect();
+    clearTimeout(timeoutId);
+  };
+}, [pathname, alwaysVisible]);
+
 
   useEffect(() => {
     const el = containerRef.current
@@ -292,7 +270,7 @@ const GlassmorphismNav: React.FC<GlassmorphismNavProps> = ({
               role="tab"
               aria-selected={idx === activeIndex}
             >
-              <a href={item.href}>{item.label}</a>
+              <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>

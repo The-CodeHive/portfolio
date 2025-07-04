@@ -5,9 +5,10 @@ import './project.css'
 
 const Projects = () => {
   return (
+    <main>
     <section className="Projects-main-section">
       <div className='Projects-main-spiral'>
-        <Spiral width={1500} height={1500} dotRadius={10} opacityMin={0.1} />
+        <Spiral width={1500} height={1500} dotRadius={10}  />
       </div>
       <div className='Projects-main-name million-feeling'>Jagdeep Singh</div>
       <div className='Projects-main-Content'>
@@ -18,6 +19,7 @@ const Projects = () => {
 
       </div>
     </section>
+    </main>
   )
 }
 
