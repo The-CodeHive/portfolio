@@ -128,9 +128,13 @@
     text-align: justify;
     backdrop-filter: blur(20px);
   }
+  .project-line1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  
+}
   .project-line2 {
     text-align: justify;
-    
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 }
