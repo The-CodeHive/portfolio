@@ -57,12 +57,13 @@ High School — DBMS Kadma High School, Jamshedpur`,
       body: `Chess is more than a game to me — it's a philosophy. As captain of my university chess team,\n I’ve led under pressure, strategized with foresight, and competed nationally.\n It’s trained me in pattern recognition, critical thought, and staying calm in chaos.`,
     },
     {
-      title: 'Skills',
-      body: `Languages: Python · C++ · JavaScript · TypeScript
-Frameworks: React · Next.js · Node.js · Express.js
-Utilities: Figma · Git · Docker · Postman · Notion · Warp Terminal · Raycast · TablePlus
-Strengths: Data Analysis · Problem-Solving · Team Collaboration`,
-    },
+        title: 'Skills',
+        body: `Languages: Python · C++ · JavaScript · TypeScript
+                Framework: React · Next.js · Node.js · Express.js
+                Utilities: Figma · Git · Docker · Postman · Notion · Warp Terminal · Raycast · TablePlus
+                Strengths: Data Analysis · Problem-Solving · Team Collaboration · Creative Thinking · Adaptability`,
+      },
+
     {
       title: 'My Approach',
       body: `I write code with meaning.
