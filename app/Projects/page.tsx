@@ -15,7 +15,7 @@ const Projects = () => {
       <div className='Projects-main-Content'>
         <div className="Projects-main-heading ">
           <h1 className='project-line1 satoshi'>Projects</h1>
-          <p className='project-line2'>The projects will be added soon 🤞<br/>Depends on how much sleep I get ...<br/>Lowkey been awake for slightly more than 24hrs 🥱 </p>
+          <p className='project-line2 xanh'>The projects will be added soon 🤞<br/>Depends on how much sleep I get ...<br/>Lowkey been awake for slightly more than 24hrs 🥱 </p>
         </div>
 
       </div>

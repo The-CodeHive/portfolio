@@ -53,7 +53,7 @@ const Aboutme: React.FC = () => {
     <div className="aboutme" ref={containerRef}>
       <div className="aboutme-container">
         <h2 className="aboutme-heading petit">The Why Behind My Work</h2>
-        <div className="aboutme-content">
+        <div className="aboutme-content xanh">
           <div className="left-text">
             <p>
               <strong>I design at the intersection of strategy, culture, and craft.</strong>

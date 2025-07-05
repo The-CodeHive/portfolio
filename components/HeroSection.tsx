@@ -1,11 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import BlurText from "./interactive-elements/BlurText";
 import TypeWriter from './interactive-elements/TypeWriter';
 import Spiral from './interactive-elements/Spiral';
 import Image from 'next/image';
 
+gsap.registerPlugin(ScrollTrigger);
 export default function HeroSection() {
   const [showParagraph, setShowParagraph] = useState(false);
 
@@ -15,6 +18,24 @@ export default function HeroSection() {
       setShowParagraph(true);
     }, 1500);
   };
+  useEffect(() => {
+    gsap.to(".hero-spiral", {
+      y: -100,
+      rotation: -10,
+      scrollTrigger: {
+        trigger: ".hero-spiral",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1.5,
+      },
+    })
+
+    
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return (
     <section id="hero-section" className="hero-section">
@@ -26,7 +47,7 @@ export default function HeroSection() {
         className="hero-logo"
       />
       <div className='hero-spiral'>
-        <Spiral width={1300} height={1300}/>
+        <Spiral width={1300} height={1300} dotRadius={10} />
       </div>
       <div className='hero-text'>
         <BlurText

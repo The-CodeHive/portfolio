@@ -20,16 +20,16 @@
 }
 
 .Projects-main-name {
-  background-color: #16171d00;
+  position: absolute;
+  top: 1rem; right: 1rem;
+  padding: 1rem 1.5rem;
   backdrop-filter: blur(10px);
   border-radius: 1rem;
-  position: absolute;
-  font-size: 1.5rem;
-  top: 1rem;
-  right: 1rem;
-  padding: 2rem;
-  color: var(--foreground);
+  color: var(--fg);
+  font-size: 1.25rem;
+  z-index: 2;
 }
+
 
 .Projects-main-spiral {
   position: absolute;
@@ -101,13 +101,7 @@
 }
 
 @media (max-width: 480px) {
-  .Projects-main-name {
-    font-size: 2rem;
-    left: 1.6rem;
-    top: 5;
-    text-align: center;
-
-  }
+  .Project-main-name { font-size: 1rem; padding: 0.75rem 1rem; }
   .Projects-main-spiral {
     top: 0;
     left: 13%;
