@@ -145,8 +145,8 @@ const CodeHive: React.FC = () => {
       </div>
 
       <div className="feature-aside">
-        <p className="feature-description">
-          CodeHive lets developers code together in real time without leaving
+        <p className="feature-description satoshithin">
+          It lets developers code together in real time without leaving
           their browsers—or their pajamas. Finally, teamwork without the awkward
           coffee breath!
         </p>

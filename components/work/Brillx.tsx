@@ -151,8 +151,8 @@ const Brillx = () => {
       </div>
 
       <div className="brillx-feature-aside">
-        <p className="brillx-feature-description">
-          BrillX helps you learn anything you ask—instantly.
+        <p className="brillx-feature-description satoshithin">
+          It helps you learn anything you ask—instantly.
           With an AI tutor that never sleeps and content tailored just for you,
           it's like having a genius in your pocket (but way less smug).
         </p>

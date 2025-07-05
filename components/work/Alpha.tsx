@@ -151,8 +151,8 @@ const Alpha = () => {
       </div>
 
       <div className="alpha-feature-aside">
-        <p className="alpha-feature-description">
-          Alpha blends sleek design with smart automation to boost your
+        <p className="alpha-feature-description satoshithin">
+          It blends sleek design with smart automation to boost your
           productivity—effortlessly. It’s like having a futuristic assistant,
           minus the sci-fi drama!
         </p>
