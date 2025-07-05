@@ -21,7 +21,7 @@ This is where every project begins for me. Not in the editor — but in the ques
 
 I dive deep — researching, listening, aligning with purpose. It’s about forming a shared language before a single line of code is written.
 
-Includes: Discovery → Strategy → Technical Direction`,
+Includes:\n Discovery → Strategy → Technical Direction`,
     },
     {
       title: 'Create',
@@ -32,7 +32,7 @@ From elegant UIs to clean backend logic, I craft experiences that don’t just w
 
 I work with React, Next.js, Python, and vanilla JavaScript.
 
-Includes: UI/UX Design → Frontend Development → Scripting & Automation`,
+Includes:\n UI/UX Design → Frontend Development → Scripting & Automation`,
     },
     {
       title: 'Action',
@@ -41,7 +41,7 @@ Includes: UI/UX Design → Frontend Development → Scripting & Automation`,
 
 Shipping is sacred. For me, it’s not just about finishing — it's about following through. With tools like Git, Linux, and VS Code, I move ideas from localhost to live, always refining on the fly.
 
-Includes: Development → Deployment → Collaboration`,
+Includes: \nDevelopment → Deployment → Collaboration`,
     },
   ];
 
@@ -156,7 +156,7 @@ Let’s create something bold, beautiful — and better than expected.`,
         <div className="portfolio-hero">
           <div className="content-wrapper">
             <h1>Pixel to Product.</h1>
-            <p>Designing and coding with precision and flair.</p>
+            <p>Designing and coding with precision and flair ✨</p>
           </div>
         </div>
 
