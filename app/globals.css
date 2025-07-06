@@ -228,6 +228,12 @@ body::selection {
   will-change: transform;
   transform: rotate(var(--rotate));
 }
+.spiral-gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  contain: layout style paint;
+}
 
 
 

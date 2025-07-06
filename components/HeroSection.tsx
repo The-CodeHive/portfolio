@@ -46,7 +46,7 @@ export default function HeroSection() {
         height={80}
         className="hero-logo"
       />
-      <div className='hero-spiral'>
+      <div className='hero-spiral spiral-gpu-accelerated'>
         <Spiral width={1300} height={1300} dotRadius={10} />
       </div>
       <div className='hero-text'>

@@ -61,7 +61,7 @@ High School — DBMS Kadma High School, Jamshedpur`,
         body: `Languages: Python · C++ · JavaScript · TypeScript
                 Framework: React · Next.js · Node.js · Express.js
                 Utilities: Figma · Git · Docker · Postman · Notion · Warp Terminal · Raycast · TablePlus
-                Strengths: Data Analysis · Problem-Solving · Team Collaboration · Creative Thinking · Adaptability`,
+                Strengths: Data Analysis · Problem-Solving · Team Collaboration · Creative Thinking · Adaptability · Persistence\n(this portfolio took 7 drafts to make)  `,
       },
 
     {
@@ -143,10 +143,10 @@ Let’s create something bold, beautiful — and better than expected.`,
   return (
     <main className="portfolio-main">
       <section className="More-About-section" ref={contentRef}>
-        <div className="More-About-spiral1">
+        <div className="More-About-spiral1 ">
           <Spiral width={1300} height={1300} dotRadius={10} />
         </div>
-        <div className="More-About-spiral2">
+        <div className="More-About-spiral2 ">
           <Spiral width={1500} height={1500} dotRadius={10} />
         </div>
 
