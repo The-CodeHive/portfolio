@@ -117,7 +117,7 @@ Let’s create something bold, beautiful — and better than expected.`,
     sections.forEach((section: any) => {
       gsap.fromTo(
         section,
-        { opacity: 0, y: 50, filter: 'blur(10px)' },
+        { opacity: 0, y: 100, filter: 'blur(10px)' },
         {
           opacity: 1,
           y: 0,

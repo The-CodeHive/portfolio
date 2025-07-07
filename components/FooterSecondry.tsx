@@ -43,7 +43,7 @@ const FooterSecondary = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 Jagdeep Singh — Built with care, caffeine, and questionable life choices.</p>
+        <p style={{ fontSize: '15px' }}>© 2025 Jagdeep Singh — Built with care, caffeine, and questionable life choices.</p>
       </div>
     </footer>
   );
