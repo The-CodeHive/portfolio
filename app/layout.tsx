@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="page-wrapper">
+      <body className="page-wrapper" cz-shortcut-listen="true">
         <Providers>
           <ClientLenisWrapper>
             <GooeyNav
