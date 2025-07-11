@@ -1,15 +1,14 @@
 :root {
-  --background: #fffdf1;
-  --foreground: #281c1c;
+  --background: #16171d;
+  --foreground: #fffdf1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #16171d;
-    --foreground: #fffdf1;
+
+@media (prefers-color-scheme: light) {
+  .glassmorphism-nav-container{
+    mix-blend-mode: difference;
   }
 }
-
 .glassmorphism-nav-container {
   position: fixed;
   bottom: 20px;
@@ -20,17 +19,11 @@
   border-radius: 1rem;
   background-color: #00000000;
   backdrop-filter: blur(10px);
-  border: 1px solid var(--foreground);
+  border: 1px solid #fffdf1;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
   mix-blend-mode: difference;
-}
-
-@media (prefers-color-scheme: light) {
-  .glassmorphism-nav-container {
-    mix-blend-mode: normal;
-  }
 }
 
 .glassmorphism-nav-container nav ul {
@@ -46,7 +39,7 @@
   display: block;
   padding: 0.5em 1em;
   border-radius: 1rem;
-  color: var(--foreground);
+  color: #fffdf1;
   text-decoration: none;
   overflow: hidden;
   transition: color 0.4s cubic-bezier(0.65, 0, 0.35, 1);
@@ -59,7 +52,7 @@
   left: 50%;
   width: 0;
   height: 0;
-  background: var(--foreground);
+  background: var(--background);
   border-radius: 50%;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0);
@@ -79,11 +72,14 @@
 }
 
 .glassmorphism-nav-container nav ul li.active a {
-  color: var(--background);
+  color: var(--foreground);
 }
 
-
-
+@media (prefers-color-scheme: dark) {
+  .glassmorphism-nav-container nav ul li.active a {
+  color: var(--foreground);
+}
+}
 
 .glassmorphism-nav-container nav ul li a:focus-visible {
   outline: 2px solid var(--foreground);

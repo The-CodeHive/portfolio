@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.14.2",
     "@react-three/drei": "^10.3.0",
     "@react-three/fiber": "^9.1.2",
     "@react-three/rapier": "^2.1.0",
@@ -16,6 +17,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.0",
     "gsap": "^3.13.0",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.522.0",
     "maath": "^0.10.8",
     "meshline": "^3.3.1",

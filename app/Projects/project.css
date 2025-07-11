@@ -9,14 +9,32 @@
     --foreground: #fffdf1;
   }
 }
-
+.project-main{
+  width: 100vw;
+  height: auto;
+}
 .Projects-main-section {
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: row;
   position: relative;
   overflow: hidden;
   padding: 2rem;
   box-sizing: border-box;
+}
+.project-img{
+  position: absolute;
+  width: 350px;
+  height: auto;
+  bottom: 5%;
+  right: 0%;
+  filter: invert(1);
+}
+@media (prefers-color-scheme: light) {
+  .project-img{
+    filter: invert(0);
+  }
 }
 
 .Projects-main-name {
@@ -74,8 +92,25 @@
 
 .project-line2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.3rem;
+    padding-bottom: 4rem; /*will delete after completing the animation*/
 }
+
+.project-showcase{
+  border-top-right-radius: 900px;
+  border-top-left-radius: 900px;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--foreground);
+  color: var(--background);
+}
+@media (prefers-color-scheme: light) {
+  .project-showcase{
+  background-color: #FFFFFF;
+  border-top:2px dashed #16171d;
+}
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -131,4 +166,189 @@
     text-align: justify;
     font-size: 1rem;
 }
+}
+.project-showcase {
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-showcase .project-brillx {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.brillx-wrapper{
+  background-color: #ff000000;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  width: 80vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+.project-brillx{
+  background-color: #FFFEFA;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  color: #16171d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  background-image: url('/images/bg.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.hero-animation {
+  pointer-events: none;
+  z-index: 0;
+  position: absolute;
+  width: 600px;
+  height: auto;
+  top: 30%;
+  left: 51%;
+}
+.hero-h1{
+  font-size: 6rem;
+  margin: 2rem;
+}
+.hero-h2 {
+  font-size: 2.5rem;
+}
+.hero-h2-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-cat-animation {
+  width: 500px;
+  height: auto;
+  position: absolute;
+  top: 100px;
+  right: 90px;
+  width: 500px;
+}
+
+.hero-p {
+  max-width: 50vw;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.btn {
+  background-color: #210e06;
+  color: #fffdf1;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  will-change: transform, filter;
+  
+  transition: 
+    transform 0.3s ease,
+    filter 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100%; height: 100%;
+  background-color: #210e06;
+  border-radius: inherit;
+  transform: translate(-50%, -50%) scale(0.8);
+  filter: blur(0);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: 
+    transform 0.4s ease,
+    filter 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.btn::after {
+  transform: translate(-50%, -50%) scale(1.2);
+  transition-delay: 0.05s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  filter: blur(8px);
+  opacity: 0.5;
+}
+
+.btn:hover::after {
+  transform: translate(-50%, -50%) scale(1.4);
+  filter: blur(16px);
+  opacity: 0.4;
+}
+
+.btn:active {
+  transform: translateY(5px) scale(0.94);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:active::before {
+  transform: translate(-50%, -50%) scale(0.85);
+  filter: blur(6px);
+  opacity: 0.4;
+  transition: 
+    transform 0.1s ease,
+    filter 0.1s ease,
+    opacity 0.1s ease;
+}
+
+.btn:active::after {
+  transform: translate(-50%, -50%) scale(1.2);
+  filter: blur(12px);
+  opacity: 0.3;
+  transition: 
+    transform 0.1s ease,
+    filter 0.1s ease,
+    opacity 0.1s ease;
+}
+
+
+.project-codehive{
+  background-color: rgb(255, 0, 68);
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
+  color: #16171d;
+}
+
+.project-alpha{
+  background-color: rgb(226, 208, 14);
+  color: #16171d;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
 }
