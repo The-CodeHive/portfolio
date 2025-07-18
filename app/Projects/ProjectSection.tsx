@@ -14,28 +14,28 @@ const ProjectSection = () => {
     if (!triggerRef.current) return;
 
     // Theme color shift
-    ScrollTrigger.create({
-      trigger: triggerRef.current,
-      start: "top top",
-      onEnter: () => {
-        gsap.to(":root", {
-          "--background": "#000000",
-          "--foreground": "#fffdf1",
-          duration: 1.2,
-          ease: "power2.inOut",
-        });
-      },
-      onLeaveBack: () => {
-        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // ScrollTrigger.create({
+    //   trigger: triggerRef.current,
+    //   start: "top top",
+    //   onEnter: () => {
+    //     gsap.to(":root", {
+    //       "--background": "#000000",
+    //       "--foreground": "#fffdf1",
+    //       duration: 1.2,
+    //       ease: "power2.inOut",
+    //     });
+    //   },
+    //   onLeaveBack: () => {
+    //     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        gsap.to(":root", {
-          "--background": isDarkMode ? "#16171d" : "#fffdf1",
-          "--foreground": isDarkMode ? "#fffdf1" : "#281c1c",
-          duration: 1.2,
-          ease: "power2.inOut",
-        });
-      },
-    });
+    //     gsap.to(":root", {
+    //       "--background": isDarkMode ? "#16171d" : "#fffdf1",
+    //       "--foreground": isDarkMode ? "#fffdf1" : "#281c1c",
+    //       duration: 1.2,
+    //       ease: "power2.inOut",
+    //     });
+    //   },
+    // });
 
     // Animate heading
     gsap.fromTo(
