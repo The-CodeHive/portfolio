@@ -1,20 +1,24 @@
-:root {
-  --bg: #16171d;
-  --fg: #fffdf1;
+
+html.light {
+  --background: #fffdf1;
+  --foreground: #281c1c;
+  --card-bg: rgba(0, 0, 0, 0);
+  --accent-gray: #282828;
+}
+
+html.dark {
+  --background: #181f26;
+  --foreground: #fffdf1;
   --card-bg: rgba(0, 0, 0, 0);
   --accent-gray: #9a9a9a;
-}@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #fffdf1;
-    --fg: #16171d;
-    --card-bg: rgba(0, 0, 0, 0);
-    --accent-gray: #282828;
-  }
 }
 
 body {
-  background: var(--bg);
-  color: var(--fg);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
   font-family: 'Satoshi', sans-serif;
   margin: 0;
 }
