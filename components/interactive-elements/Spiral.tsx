@@ -97,7 +97,6 @@ const Spiral: React.FC<SpiralProps> = ({
 
   const uniqueId = useId()
   const gradientId = `spiral-gradient-${uniqueId}`
-  const animationId = `spiral-pulse-${uniqueId}`
 
   const selectedGradient = gradientPresets[gradientPreset]
   const selectedColor = colorPresets[colorPreset]
@@ -109,6 +108,7 @@ const Spiral: React.FC<SpiralProps> = ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "visible",
     ...style,
   }
 
@@ -131,22 +131,20 @@ const Spiral: React.FC<SpiralProps> = ({
 
         {spiralData.map((point, index) => (
           <circle
-            key={index}
+            key={index} 
             cx={point.x}
             cy={point.y}
             r={dotRadius}
             fill={selectedGradient ? `url(#${gradientId})` : selectedColor}
-            opacity={pulseEffect ? opacityMin : opacityMax}
+            className={pulseEffect ? "spiral-dot" : ""}
             style={
               pulseEffect
                 ? {
-                    animationName: animationId,
-                    animationDuration: `${duration}s`,
-                    animationTimingFunction: "ease-in-out",
-                    animationIterationCount: "infinite",
+                    
+                    opacity: 0,
                     animationDelay: `${point.animationDelay}s`,
                   }
-                : {}
+                : { opacity: opacityMax }
             }
           />
         ))}
@@ -154,13 +152,22 @@ const Spiral: React.FC<SpiralProps> = ({
 
       {pulseEffect && (
         <style jsx global>{`
-          @keyframes ${animationId} {
-            0%, 100% {
-              r: ${dotRadius * sizeMin};
+          .spiral-dot {
+            transform-origin: center;
+            transform-box: fill-box;
+            animation: spiralPulse ${duration}s ease-in-out infinite;
+            will-change: transform, opacity;
+            animation-fill-mode: both;
+          }
+
+          @keyframes spiralPulse {
+            0%,
+            100% {
+              transform: scale(${sizeMin});
               opacity: ${opacityMin};
             }
             50% {
-              r: ${dotRadius * sizeMax};
+              transform: scale(${sizeMax});
               opacity: ${opacityMax};
             }
           }
