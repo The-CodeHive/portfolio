@@ -100,7 +100,7 @@ const CodeHive: React.FC = () => {
     const img = container.querySelector<HTMLImageElement>(".feature-image");
     if (img) {
       gsap.to(img, {
-        y: -150,
+         yPercent: -30,
         scrollTrigger: {
           trigger: container,
           start: "top bottom",
