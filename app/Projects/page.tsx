@@ -8,6 +8,7 @@ import FooterSecondary from '@/components/FooterSecondry'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './project.css'
+import ProjectSection from './ProjectSection';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -93,47 +94,12 @@ const Projects = () => {
           <div className="Projects-main-heading ">
             <h1 className='project-line1 satoshi'>Projects</h1>
             <p className='project-line2 xanh'>
-              The list is endless—just need time to update.😊
             </p>
           </div>
         </div>
         <img src="/images/project.png" alt="Projects" className='project-img' />
       </section>
-
-      <section className='project-showcase'>
-        
-          <div className='project-brillx satoshi'>
-          <div className='brillx-wrapper'>
-            <DotLottieReact
-                className='hero-cat-animation'
-                src="https://lottie.host/3fd833c2-9b53-4e55-9289-a431fa30df91/hYyh6zwgdY.lottie"
-                loop
-                autoplay
-              />
-            <h1 ref={h1Ref} className='hero-h1 satoshi'>Brillx</h1>
-
-              <h2 ref={h2Ref} className='hero-h2 petit'>Curiosity Has No Limits.</h2>
-              
-            
-            <p ref={pRef} className='hero-p xanh'>
-              BrillX is your personal AI learning buddy, ready to answer any question and turn learning into an adventure. For kids, teens, and lifelong learners—discover knowledge instantly, in fun and simple ways.
-            </p>
-            <div>
-              <a href="https://brillx.vercel.app" target='_blank' >
-                <button ref={btnRef} className="btn noto">Visit BrillX</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
-          {/* <div className='project-codehive satoshi'>
-              CodeHive
-          </div>
-          <div className='project-alpha satoshi'>
-              Alpha
-          </div> */}
-      </section>
-
+      <ProjectSection/>
       <FooterSecondary />
     </main>
   )

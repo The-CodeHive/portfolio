@@ -15,11 +15,11 @@ const Brillx = () => {
   const projectLink = "https://brillx.vercel.app";
   const [isOverlayVisible, setOverlayVisible] = useState(false);
 
+  // Hover-follow overlay effect
   useEffect(() => {
     const container = containerRef.current;
     const floating = floatingRef.current;
     const clickable = linkLayerRef.current;
-
     if (!container || !floating || !clickable) return;
 
     let mouseX = 0;
@@ -36,7 +36,7 @@ const Brillx = () => {
       currentY = lerp(currentY, mouseY, 0.1);
 
       const { width: w, height: h } = floating.getBoundingClientRect();
-      floating.style.left = `${currentX - w}px`;
+      floating.style.left = `${currentX - w /2}px`;
       floating.style.top = `${currentY - h / 2}px`;
 
       animationFrameId = requestAnimationFrame(updatePosition);
@@ -70,10 +70,11 @@ const Brillx = () => {
     };
   }, []);
 
+  // Scroll-triggered animations and parallax
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    if (window.innerWidth <= 768) return; // skip animations on mobile
+    if (window.innerWidth <= 768) return; // skip on mobile
 
     const blocks = [
       container.querySelector(".brillx-feature-heading"),
@@ -81,12 +82,14 @@ const Brillx = () => {
       container.querySelector(".brillx-feature-aside"),
     ];
 
+    // Initial fade-in setup
     gsap.set(blocks, {
       autoAlpha: 0,
       y: 30,
       filter: "blur(10px)",
     });
 
+    // Fade-in and slide-up
     gsap.to(blocks, {
       scrollTrigger: {
         trigger: container,
@@ -97,11 +100,28 @@ const Brillx = () => {
       autoAlpha: 1,
       y: 0,
       filter: "blur(0px)",
-      ease: "none",
+      ease: "power2.out",
     });
 
+    // True parallax effect on the image
+    const img = container.querySelector<HTMLImageElement>(
+      ".brillx-feature-image"
+    );
+    if (img) {
+      gsap.to(img, {
+        y: -150, // image moves up more slowly
+        scrollTrigger: {
+          trigger: container,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        ease: "none",
+      });
+    }
+
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.set(blocks, { clearProps: "all" });
     };
   }, []);
@@ -125,12 +145,14 @@ const Brillx = () => {
               e.preventDefault();
             }
           }}
-        ></a>
+        />
       )}
 
       {projectLink && (
         <div
-          className={`brillx-feature-overlay ${isOverlayVisible ? "show" : ""}`}
+          className={`brillx-feature-overlay ${
+            isOverlayVisible ? "show" : ""
+          }`}
           ref={floatingRef}
         >
           Visit BrillX
@@ -142,7 +164,7 @@ const Brillx = () => {
         <h2 className="satoshithin">AI-Powered Learning Platform</h2>
       </div>
 
-      <div className="brillx-feature-image-container">
+      <div className="brillx-feature-image-container ">
         <img
           src="/images/brillx.png"
           alt="BrillX SaaS Learning Platform"
@@ -171,7 +193,7 @@ const Brillx = () => {
           Behind the Build
         </button>
 
-        {/* Mobile-only Visit button, visibility controlled via CSS */}
+        {/* Mobile-only Visit button */}
         <button
           className="brillx-feature-button satoshi brillx-feature-visit"
           onClick={() => window.open(projectLink, "_blank")}

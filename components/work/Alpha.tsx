@@ -7,19 +7,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Alpha = () => {
+const Alpha: React.FC = () => {
   const floatingRef = useRef<HTMLDivElement>(null);
   const linkLayerRef = useRef<HTMLAnchorElement>(null);
   const containerRef = useRef<HTMLElement>(null);
 
-  const projectLink = "https://example.com"; 
+  const projectLink = "https://example.com";
   const [isOverlayVisible, setOverlayVisible] = useState(false);
 
+  // Hover-follow overlay effect
   useEffect(() => {
     const container = containerRef.current;
     const floating = floatingRef.current;
     const clickable = linkLayerRef.current;
-
     if (!container || !floating || !clickable || window.innerWidth <= 768)
       return;
 
@@ -37,7 +37,7 @@ const Alpha = () => {
       currentY = lerp(currentY, mouseY, 0.1);
 
       const { width: w, height: h } = floating.getBoundingClientRect();
-      floating.style.left = `${currentX - w}px`;
+      floating.style.left = `${currentX - w / 2}px`;
       floating.style.top = `${currentY - h / 2}px`;
 
       animationFrameId = requestAnimationFrame(updatePosition);
@@ -71,6 +71,7 @@ const Alpha = () => {
     };
   }, []);
 
+  // Scroll-triggered fade/slide and parallax effect
   useEffect(() => {
     const container = containerRef.current;
     if (!container || window.innerWidth <= 768) return;
@@ -81,12 +82,10 @@ const Alpha = () => {
       container.querySelector(".alpha-feature-aside"),
     ];
 
-    gsap.set(blocks, {
-      autoAlpha: 0,
-      y: 30,
-      filter: "blur(10px)",
-    });
+    // Initial hide and position
+    gsap.set(blocks, { autoAlpha: 0, y: 30, filter: "blur(10px)" });
 
+    // Fade-in and slide-up with easing
     gsap.to(blocks, {
       scrollTrigger: {
         trigger: container,
@@ -97,8 +96,25 @@ const Alpha = () => {
       autoAlpha: 1,
       y: 0,
       filter: "blur(0px)",
-      ease: "none",
+      ease: "power2.out",
     });
+
+    // Parallax for image
+    const img = container.querySelector<HTMLImageElement>(
+      ".alpha-feature-image"
+    );
+    if (img) {
+      gsap.to(img, {
+        y: -150,
+        scrollTrigger: {
+          trigger: container,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        ease: "none",
+      });
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
@@ -107,7 +123,7 @@ const Alpha = () => {
   }, []);
 
   return (
-    <section className="alpha" ref={containerRef}>
+    <section className="alpha overflow-visible" ref={containerRef}>
       {projectLink && (
         <a
           href={projectLink}
@@ -116,21 +132,23 @@ const Alpha = () => {
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => {
-            const target = e.target as HTMLElement;
+            const tgt = e.target as HTMLElement;
             if (
-              target.closest(".alpha-feature-button") ||
-              target.closest(".alpha-feature-aside") ||
-              target.closest(".alpha-feature-heading")
+              tgt.closest(".alpha-feature-button") ||
+              tgt.closest(".alpha-feature-aside") ||
+              tgt.closest(".alpha-feature-heading")
             ) {
               e.preventDefault();
             }
           }}
-        ></a>
+        />
       )}
 
       {projectLink && (
         <div
-          className={`alpha-feature-overlay ${isOverlayVisible ? "show" : ""}`}
+          className={`alpha-feature-overlay ${
+            isOverlayVisible ? "show" : ""
+          }`}
           ref={floatingRef}
         >
           Visit Alpha
@@ -142,7 +160,7 @@ const Alpha = () => {
         <h2 className="satoshithin">Next-Gen Product Innovation</h2>
       </div>
 
-      <div className="alpha-feature-image-container">
+      <div className="alpha-feature-image-container overflow-visible">
         <img
           src="/images/alpha.png"
           alt="Alpha Project Screenshot"

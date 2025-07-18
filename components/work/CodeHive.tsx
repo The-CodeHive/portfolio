@@ -20,7 +20,7 @@ const CodeHive: React.FC = () => {
     const container = containerRef.current;
     const floating = floatingRef.current;
     const clickable = linkLayerRef.current;
-    if (!container || !floating || !clickable) return;
+    if (!container || !floating || !clickable || window.matchMedia("(max-width:768px)").matches) return;
 
     let mouseX = 0;
     let mouseY = 0;
@@ -35,8 +35,8 @@ const CodeHive: React.FC = () => {
       currentX = lerp(currentX, mouseX, 0.1);
       currentY = lerp(currentY, mouseY, 0.1);
       const { width: w, height: h } = floating.getBoundingClientRect();
-      floating.style.left = `${currentX - w / 2}px`;
-      floating.style.top = `${currentY - h / 2}px`;
+      floating.style.left = `${currentX - w/2}px`;
+      floating.style.top = `${currentY - h/2}px`;
       animationFrameId = requestAnimationFrame(updatePosition);
     };
 
@@ -68,11 +68,10 @@ const CodeHive: React.FC = () => {
     };
   }, []);
 
-  // Scroll-triggered GSAP animations
+  // Scroll-triggered fade/slide + parallax
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
-    if (window.matchMedia("(max-width: 768px)").matches) return;
+    if (!container || window.matchMedia("(max-width:768px)").matches) return;
 
     const blocks = [
       container.querySelector(".feature-heading"),
@@ -80,7 +79,10 @@ const CodeHive: React.FC = () => {
       container.querySelector(".feature-aside"),
     ];
 
+    // 1. Initial state
     gsap.set(blocks, { autoAlpha: 0, y: 30, filter: "blur(10px)" });
+
+    // 2. Fade in + slide up
     gsap.to(blocks, {
       scrollTrigger: {
         trigger: container,
@@ -94,6 +96,22 @@ const CodeHive: React.FC = () => {
       ease: "power2.out",
     });
 
+    // 3. Parallax on image
+    const img = container.querySelector<HTMLImageElement>(".feature-image");
+    if (img) {
+      gsap.to(img, {
+        y: -150,
+        scrollTrigger: {
+          trigger: container,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+        ease: "none",
+      });
+    }
+
+    // Cleanup
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.set(blocks, { clearProps: "all" });
@@ -101,7 +119,7 @@ const CodeHive: React.FC = () => {
   }, []);
 
   return (
-    <section className="codehive" ref={containerRef}>
+    <section className="codehive overflow-visible" ref={containerRef}>
       {projectLink && (
         <a
           href={projectLink}
@@ -136,7 +154,7 @@ const CodeHive: React.FC = () => {
         <h2 className="satoshithin">Collaborative Code Editor</h2>
       </div>
 
-      <div className="feature-image-container">
+      <div className="feature-image-container overflow-visible">
         <img
           src="/images/codehive.png"
           alt="CodeHive Collaborative Code Editor"
@@ -160,7 +178,6 @@ const CodeHive: React.FC = () => {
         >
           Behind the Build
         </button>
-        {/* Mobile-only Visit button */}
         <button
           className="feature-button satoshi feature-visit"
           onClick={() => window.open(projectLink, "_blank")}

@@ -33,7 +33,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #16171d;  /* 16171d */
+    --background: #1f212e;  /* 16171d */
     --foreground: #fffdf1;
   }
 }
@@ -473,7 +473,7 @@ body::selection {
   box-sizing: border-box;
   gap: 2rem;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow: visible !important;
 }
 
 /* 🔁 Link layer */
@@ -537,13 +537,13 @@ body::selection {
   flex: 0 0 400px;
   max-width: 90vw;
   aspect-ratio: 1/1;
-  overflow: hidden;
+  overflow: visible !important;
   transition: transform 0.4s ease;
 }
 
 .feature-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: fill;
   display: block;
   filter: invert(100%);
@@ -671,7 +671,7 @@ body::selection {
   box-sizing: border-box;
   gap: 2rem;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Link layer */
@@ -737,11 +737,11 @@ body::selection {
   flex: 0 0 400px;
   max-width: 90vw;
   aspect-ratio: 1/1;
-  overflow: hidden;
+  overflow: visible;
 }
 .brillx-feature-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
   filter: invert(100%);
@@ -783,6 +783,12 @@ body::selection {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }
+/* Force the section and its image wrapper to be visible */
+.brillx,
+.brillx-feature-image-container {
+  overflow: visible !important;
+}
+
 
 /* ==================================================
    Alpha Section 
@@ -799,7 +805,7 @@ body::selection {
   box-sizing: border-box;
   gap: 2rem;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow: visible !important;
 }
 
 /* Link layer */
@@ -865,11 +871,11 @@ body::selection {
   flex: 0 0 400px;
   max-width: 90vw;
   aspect-ratio: 1/1;
-  overflow: hidden;
+  overflow: visible !important;
 }
 .alpha-feature-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
   filter: invert(100%);

@@ -1,14 +1,21 @@
 :root {
   --background: #fffdf1;
   --foreground: #281c1c;
+  transition: background-color 1s ease, color 1s ease;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #16171d;
     --foreground: #fffdf1;
+    transition: background-color 1s ease, color 1s ease;
   }
 }
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
 .project-main{
   width: 100vw;
   height: auto;
@@ -29,6 +36,7 @@
   height: auto;
   bottom: 5%;
   right: 0%;
+  z-index: 3;
   filter: invert(1);
 }
 @media (prefers-color-scheme: light) {
@@ -351,4 +359,202 @@
   width: 100%;
   text-align: center;
   font-size: 5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===============================================================
+    Project Section
+================================================================*/
+
+.project-section{
+  height: auto;
+  width: 100vw;
+}
+.theme-trigger {
+  width: 100vw;
+  height: 120vh;
+  display: flex; /* 👈 enable flex layout */
+  flex-direction: column; /* stack heading + paragraph vertically */
+  align-items: center;     /* center horizontally */
+  justify-content: center; /* center vertically */
+  padding: 0 1rem;         /* optional padding for mobile spacing */
+  text-align: center;
+}
+
+.trigger-heading{
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 700px;
+  margin-inline: auto;
+}
+.trigger-p{
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--foreground);
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-inline: auto;
+}
+.animation {
+  width: 100%;
+  max-width: 80rem;
+  height: auto;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  margin: 0 auto;          /* center the container itself */
+  padding: 2rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+   Responsive fixes specific to page.tsx only
+=============================================== */
+
+@media (max-width: 1024px) {
+  .Projects-main-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .Projects-main-Content {
+    width: 90%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .project-img {
+    width: 280px;
+    right: 5%;
+    bottom: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-line1 {
+    font-size: 3.5rem;
+  }
+
+  .project-line2 {
+    font-size: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .Projects-main-heading {
+    text-align: center;
+  }
+
+  .Projects-main-Content {
+    padding: 1rem;
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-line1 {
+    font-size: 4rem;
+  }
+
+  .project-line2 {
+    font-size: 0.9rem;
+  }
+
+  .Projects-main-Content {
+    top: 50%;
+    padding: 0.75rem;
+  }
+
+  .project-img {
+    display: none;
+  }
+
+  .Projects-main-name {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  
 }
