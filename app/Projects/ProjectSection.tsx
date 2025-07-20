@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import TechUsed from './sections/TechUsed';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,29 +14,29 @@ const ProjectSection = () => {
   useEffect(() => {
     if (!triggerRef.current) return;
 
-    // Theme color shift
-    // ScrollTrigger.create({
-    //   trigger: triggerRef.current,
-    //   start: "top top",
-    //   onEnter: () => {
-    //     gsap.to(":root", {
-    //       "--background": "#000000",
-    //       "--foreground": "#fffdf1",
-    //       duration: 1.2,
-    //       ease: "power2.inOut",
-    //     });
-    //   },
-    //   onLeaveBack: () => {
-    //     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    //Theme color shift
+    ScrollTrigger.create({
+      trigger: triggerRef.current,
+      start: "top top",
+      onEnter: () => {
+        gsap.to(":root", {
+          "--background": "#000000",
+          "--foreground": "#ffffffff",
+          duration: 1.2,
+          ease: "power2.inOut",
+        });
+      },
+      onLeaveBack: () => {
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    //     gsap.to(":root", {
-    //       "--background": isDarkMode ? "#16171d" : "#fffdf1",
-    //       "--foreground": isDarkMode ? "#fffdf1" : "#281c1c",
-    //       duration: 1.2,
-    //       ease: "power2.inOut",
-    //     });
-    //   },
-    // });
+        gsap.to(":root", {
+          "--background": isDarkMode ? "#181f26" : "#fffdf1",
+          "--foreground": isDarkMode ? "#fffdf1" : "#281c1c",
+          duration: 1.2,
+          ease: "power2.inOut",
+        });
+      },
+    });
 
     // Animate heading
     gsap.fromTo(
@@ -76,22 +77,12 @@ const ProjectSection = () => {
     <div className='project-section'>
       <div className='theme-trigger' ref={triggerRef}>
         <h2 className="trigger-heading satoshi" ref={headingRef}>
-          {/* Let’s shift gears. */}
-            🚧 Work in Progress
+          Let’s shift gears.
         </h2>
         <p className="trigger-p xanh" ref={paragraphRef}>
-          {/* Let's enter the build zone — where ideas turn real. From sleek UIs to smart systems, here’s what I’ve been working on. */}
-           Our project showcase is still in the oven — stay tuned, it's gonna be delicious!
+          Let's enter the build zone — where ideas turn real. From sleek UIs to smart systems, here’s what I’ve been working on.
         </p>
-      </div>
-      <div className='animation'>
-            <DotLottieReact
-                src="https://lottie.host/6ba623de-c7f6-4895-a05a-f3d73ea35cf1/bEVbfacHv5.lottie"
-                loop
-                autoplay
-                />
-        </div>
-      
+      </div>  
     </div>
   );
 };

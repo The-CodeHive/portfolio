@@ -1,7 +1,6 @@
 "use client";
 
 
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import React, { useEffect, useRef } from 'react'
 import Spiral from '@/components/interactive-elements/Spiral'
 import FooterSecondary from '@/components/FooterSecondry'
@@ -9,6 +8,10 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './project.css'
 import ProjectSection from './ProjectSection';
+import TechUsed from './sections/TechUsed';
+import BrillxSection from './sections/BrillxSection';
+import CodeHiveSection from './sections/CodeHiveSection';
+import AlphaSection from './sections/AlphaSection';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -100,6 +103,10 @@ const Projects = () => {
         <img src="/images/project.png" alt="Projects" className='project-img' />
       </section>
       <ProjectSection/>
+        <TechUsed/>
+        <BrillxSection/>
+        <CodeHiveSection/>
+        <AlphaSection/>
       <FooterSecondary />
     </main>
   )
