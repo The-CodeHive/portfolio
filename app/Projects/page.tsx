@@ -2,6 +2,7 @@
 
 
 import React, { useEffect, useRef } from 'react'
+import Spline from '@splinetool/react-spline/next';
 import Spiral from '@/components/interactive-elements/Spiral'
 import FooterSecondary from '@/components/FooterSecondry'
 import gsap from 'gsap'
@@ -12,6 +13,7 @@ import TechUsed from './sections/TechUsed';
 import BrillxSection from './sections/BrillxSection';
 import CodeHiveSection from './sections/CodeHiveSection';
 import AlphaSection from './sections/AlphaSection';
+import LetMeShow from './sections/LetMeShow';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -102,8 +104,9 @@ const Projects = () => {
         </div>
         <img src="/images/project.png" alt="Projects" className='project-img' />
       </section>
-      <ProjectSection/>
+        <ProjectSection/>
         <TechUsed/>
+        <LetMeShow/>
         <BrillxSection/>
         <CodeHiveSection/>
         <AlphaSection/>
