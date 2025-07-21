@@ -52,7 +52,7 @@
   left: 50%;
   width: 0;
   height: 0;
-  background: var(--background);
+  background: var(--foreground);
   border-radius: 50%;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0);
@@ -72,17 +72,9 @@
 }
 
 .glassmorphism-nav-container nav ul li.active a {
-  color: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  .glassmorphism-nav-container nav ul li a::before{
-    background-color: var(--foreground);
-  }
-  .glassmorphism-nav-container nav ul li.active a {
   color: var(--background);
 }
-}
+
 
 .glassmorphism-nav-container nav ul li a:focus-visible {
   outline: 2px solid var(--foreground);

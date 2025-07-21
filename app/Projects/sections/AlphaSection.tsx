@@ -10,7 +10,7 @@ const AlphaSection = () => {
     <section className="alpha-section satoshi">
           <div className="alpha-corner-div" />
           <div className="spline-bg">
-            <SplineScene scene="https://draft.spline.design/P92-DwPtoaUaN4wd/scene.splinecode" />
+            <SplineScene scene="https://draft.spline.design/CSobRiqSEmGf5HlM/scene.splinecode" />
           </div>
           <div className="content">
             Alpha

@@ -11,7 +11,7 @@ const LetMeShow = () => {
         <SplineScene scene="https://draft.spline.design/a-KxmuTJLczMnSES/scene.splinecode" />
       </div>
 
-      <div className="mobile-fallback mobile-only">
+      <div className="mobile-fallback mobile-only xanh">
         <h2>Here's a glimpse of what I bring to the table</h2>
       </div>
     </main>

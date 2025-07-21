@@ -4,7 +4,7 @@
   right: 0;
   width: 200px;
   height: 60px;
-  background-color: black;
+  background-color: var(--background);
   z-index: 10;
 }
 

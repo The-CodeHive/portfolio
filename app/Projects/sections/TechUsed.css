@@ -1,5 +1,5 @@
 .main-container {
-  height: 110vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   display: flex;
@@ -36,6 +36,13 @@
 .gravity-wrapper {
   width: 100%;
   height: 100%;
+}
+@media (max-width: 639px) {
+  .gravity-wrapper {
+    pointer-events: none;
+    touch-action: none;
+    opacity: 1;
+  }
 }
 
 .tech-badge {
