@@ -1,97 +1,43 @@
-.corner-div {
+.alpha-corner-div {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 200px;
   height: 60px;
   background-color: black;
-  z-index: 9999;
+  z-index: 10;
 }
 
 
 .alpha-section {
-  width: 100vw;
+  position: relative;
+  width: 100%;
   height: 100vh;
-  font-size: 3rem;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  border-radius: 8px;
-  font-family: 'Satoshi', sans-serif;
-}
-.custom-card {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.96);
-  position: relative; /* ✅ required */
-  overflow: hidden;
-  border-radius: 8px;
+  z-index: 0;
 }
 
-.alpha-left {
-  flex: 1;
-  padding: 2rem;
-  position: relative; /* ✅ required for spotlight positioning */
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-.custom-spotlight {
+.spline-bg {
   position: absolute;
-  top: -10rem;
-  left: 0;
+  inset: 0;
+  z-index: -1;
 }
 
-@media (min-width: 768px) {
-  .custom-spotlight {
-    left: 15rem;
-    top: -5rem;
-  }
+.spline-bg canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
 }
 
-.alpha-content {
-  display: flex;
-  height: 100%;
-}
-
-.alpha-left {
-  flex: 1;
-  padding: 2rem;
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.alpha-title {
-  font-size: 2.5rem;
+.content {
+  font-size: 4rem;
+  top: 20%;
   font-weight: bold;
+  z-index: 1;
 }
 
-@media (min-width: 768px) {
-  .alpha-title {
-    font-size: 3rem;
-  }
-}
 
-.alpha-description {
-  margin-top: 1rem;
-  color: #ccc;
-  max-width: 40rem;
-  font-size: 1rem;
-}
-
-.alpha-right {
-  flex: 1;
-  position: relative;
-}
-
-.spline-scene {
-  width: 100%;
-  height: 100%;
-}

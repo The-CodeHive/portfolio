@@ -15,7 +15,8 @@
   height: 100vh;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
   z-index: 0;
 }
@@ -33,11 +34,156 @@
   object-fit: cover;
 }
 
-.content {
-  font-size: 4rem;
-  top: 20%;
-  font-weight: bold;
+.content-brillx {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: justify;
+  margin-right: 4rem;
   z-index: 1;
+  pointer-events: none;
+}
+
+.content-h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  pointer-events: auto;
+}
+.content-sub{
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  color: #fffcefd2;
+  pointer-events: auto;
+}
+.content-p {
+  max-width: 95%;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  pointer-events: auto;
+  text-align: justify;
+}
+
+.content-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  pointer-events: auto;
+}
+
+.brillx-btn {
+  padding: 0.75rem 1.75rem;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background-color: #fef6e4;
+  color: #222;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #ffc6c7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.brillx-btn:hover {
+  background-color: #fcd5ce;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #bbb;
+}
+
+.brillx-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #aaa;
+}
+
+.brillx-btn.primary {
+  background-color: #ffd6f6;
+  color: #222;
+  border: 2px solid #ff0051;
+}
+
+.brillx-btn.primary:hover {
+  background-color: #ffe29a;
+}
+
+.text-highlighter{
+  color: #000000;
+  background-color: #f3ffd8;
+  padding: 3px;
 }
 
 
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 1024px) {
+  .content-brillx {
+    width: 70%;
+    margin-right: 2rem;
+  }
+
+  .content-h1 {
+    font-size: 4rem;
+  }
+
+  .content-p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brillx-section {
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 5rem;
+  }
+
+  .content-brillx {
+    width: 90%;
+    margin-right: 0;
+  }
+
+  .content-h1 {
+    font-size: 3rem;
+  }
+
+  .content-sub {
+    font-size: 1.1rem;
+  }
+
+  .content-p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .brillx-btn {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.5rem;
+  }
+  .spline-bg {
+    display: none;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .content-h1 {
+    font-size: 2.5rem;
+  }
+
+  .content-sub {
+    font-size: 1rem;
+  }
+
+  .content-p {
+    font-size: 0.95rem;
+  }
+
+  .brillx-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  
+}

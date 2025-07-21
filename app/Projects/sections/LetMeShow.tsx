@@ -1,16 +1,21 @@
 import React from 'react';
 import { SplineScene } from '../components/Alpha/splite';
-import './CodeHiveSection.css'
+import './CodeHiveSection.css';
 
 const LetMeShow = () => {
   return (
     <main className='show-section'>
-        <div className="show-corner-div" />
-            <div className='spline-bg'>
-            <SplineScene scene="https://prod.spline.design/33zWiK3HXQJnDsAl/scene.splinecode" />
-            </div>
-    </main>
-  )
-}
+      <div className="show-corner-div" />
 
-export default LetMeShow
+      <div className="spline-bg desktop-only">
+        <SplineScene scene="https://draft.spline.design/a-KxmuTJLczMnSES/scene.splinecode" />
+      </div>
+
+      <div className="mobile-fallback mobile-only">
+        <h2>Here's a glimpse of what I bring to the table</h2>
+      </div>
+    </main>
+  );
+};
+
+export default LetMeShow;

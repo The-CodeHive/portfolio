@@ -398,23 +398,24 @@ body {
     Project Section
 ================================================================*/
 
-.project-section{
+.project-section {
   height: auto;
   width: 100vw;
 }
+
 .theme-trigger {
   width: 100vw;
   height: 100vh;
-  display: flex; 
-  flex-direction: column; 
-  align-items: center;     
-  justify-content: center; 
-  padding: 0 1rem;         
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
   text-align: center;
   margin-bottom: 200px;
 }
 
-.trigger-heading{
+.trigger-heading {
   font-size: 4rem;
   font-weight: 600;
   color: var(--foreground);
@@ -424,7 +425,8 @@ body {
   max-width: 700px;
   margin-inline: auto;
 }
-.trigger-p{
+
+.trigger-p {
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--foreground);
@@ -434,15 +436,46 @@ body {
   opacity: 0.85;
   margin-inline: auto;
 }
-.animation {
-  width: 100%;
-  max-width: 80rem;
-  height: auto;
-  display: flex;
-  justify-content: center; /* center horizontally */
-  margin: 0 auto;          /* center the container itself */
-  padding: 2rem 0;
+.text-highlight {
+  position: relative;
+  display: inline;
+  overflow: hidden;
+  padding: 0 0.2em;
 }
+
+.highlight-inner {
+  position: relative;
+  z-index: 2;
+  color: var(--foreground);
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.4s ease 0.6s;
+}
+
+/* Sliding white background */
+.text-highlight::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #fff;
+  z-index: 1;
+  transform: translateX(0);
+  transition: width 0.8s ease;
+}
+
+/* Triggered animation */
+.text-highlight.active::before {
+  width: 100%;
+}
+
+.text-highlight.active .highlight-inner {
+  opacity: 1;
+}
+
+
 
 
 
