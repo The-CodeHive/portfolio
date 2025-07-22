@@ -7,6 +7,16 @@
   background-color: var(--background);
   z-index: 10;
 }
+.brillx-text-highlighter{
+  color: #000000;
+  background-color: #fdfcd0;
+  padding: 3px;
+
+}
+.brillx-text-highlighter::selection {
+  background: #fffd84;
+  color: inherit; 
+}
 
 
 .brillx-section {
@@ -55,18 +65,28 @@
 .content-sub{
   font-size: 1.3rem;
   font-weight: 400;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   color: #fffcefd2;
   pointer-events: auto;
 }
 .content-p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 95%;
   font-size: 1.2rem;
   line-height: 1.6;
   pointer-events: auto;
   text-align: justify;
+  margin-top: 1.5rem;
 }
-
+.content-p-sub {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-top: 0.2rem;
+  pointer-events: auto;
+  align-items: center;
+}
 .content-btns {
   display: flex;
   gap: 1rem;
@@ -80,7 +100,9 @@
   border-radius: 12px;
   background-color: #fef6e4;
   color: #222;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  font-family: "Cabinet Grotesk", sans-serif; 
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0 4px 0 #ffc6c7;
@@ -150,11 +172,16 @@
 
   .content-sub {
     font-size: 1.1rem;
+    text-align:center;
   }
 
   .content-p {
     font-size: 1rem;
     text-align: left;
+    text-align:justify;
+  }
+  .content-p-sub {
+    text-align:center;
   }
 
   .brillx-btn {

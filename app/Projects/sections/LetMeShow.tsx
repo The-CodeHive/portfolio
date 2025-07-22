@@ -1,5 +1,5 @@
 import React from 'react';
-import { SplineScene } from '../components/Alpha/splite';
+import { SplineScene } from '../components/splite';
 import './CodeHiveSection.css';
 
 const LetMeShow = () => {

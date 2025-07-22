@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 interface TechUsedProps {
   tech: string[];
   direction?: 'row' | 'column';
+  color?: string; 
 }
 
 const techIconsSimple: Record<string, string> = {
@@ -23,23 +24,32 @@ const techIconsSimple: Record<string, string> = {
   'Vercel':       'https://cdn.simpleicons.org/vercel',
   'Tailwind CSS': 'https://cdn.simpleicons.org/tailwindcss',
   'Clerk':        'https://cdn.simpleicons.org/clerk',
+  'LangChain': 'https://cdn.simpleicons.org/LangChain',
+  'Pinecone':  '',
+  'Prisma':    'https://cdn.simpleicons.org/prisma',
+  'OpenAI': 'https://cdn.simpleicons.org/openai',
+  'tRPC':   'https://cdn.simpleicons.org/trpc',
 };
+
+
 
 const TechUsed: React.FC<TechUsedProps> = ({
   tech,
   direction = 'row',
+  color,
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    if (color) return; 
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = () => setIsDarkMode(mediaQuery.matches);
-    handleChange(); // initial value
+    handleChange(); 
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
+  }, [color]);
 
-  const iconColor = isDarkMode ? 'fffdf1' : '221515';
+  const iconColor = color ? color.replace('#', '') : isDarkMode ? 'fffdf1' : '221515';
 
   return (
     <div

@@ -7,6 +7,15 @@
   background-color: var(--background);
   z-index: 10;
 }
+.alpha-text-highlighter{
+  color: #000000;
+  background-color: #ffd5b9;
+  padding: 3px;
+}
+.alpha-text-highlighter::selection {
+  background: #ff812d;
+  color: inherit; /* optional - keeps text color unchanged */
+}
 
 
 .alpha-section {
@@ -15,7 +24,8 @@
   height: 100vh;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
   z-index: 0;
 }
@@ -32,12 +42,169 @@
   height: 100% !important;
   object-fit: cover;
 }
+.content-alpha {
+  z-index: 2;
+  width: 50%;
+  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
 
-.content {
+.content-h1 {
   font-size: 4rem;
-  top: 20%;
   font-weight: bold;
-  z-index: 1;
+  margin-bottom: 1rem;
+  pointer-events: auto;
+}
+
+.content-sub {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  pointer-events: auto;
+}
+
+.content-p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  pointer-events: auto;
+}
+
+.content-p-sub {
+  margin-top: 1rem;
+  pointer-events: auto;
+}
+
+.techused-container {
+  margin-bottom: 1.5rem;
+  pointer-events: auto;
+}
+
+.content-btns {
+  display: flex;
+  gap: 1rem;
+  pointer-events: auto;
 }
 
 
+.alpha-btn {
+  --accent: #ff6b00;         /* tweak this for your brand accent */
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: #ffffff;       /* base color */
+  color: #1a1a1a;            /* text color */
+  border: 1px solid #e0e0e0; /* subtle border */
+  border-radius: 6px;        /* gentle rounding */
+  
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.alpha-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.alpha-btn:active {
+  background: #e15800;       /* slightly darker accent */
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+  transform: scale(0.98);
+}
+
+
+
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 1024px) {
+  .content-alpha {
+    width: 70%;
+    padding-left: 2rem;
+  }
+
+  .content-h1 {
+    font-size: 3.5rem;
+  }
+
+  .content-p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .alpha-section {
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 5rem;
+  }
+
+  .content-alpha {
+    width: 90%;
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content-h1 {
+    font-size: 3rem;
+  }
+
+  .content-sub {
+    font-size: 1.1rem;
+  }
+
+  .content-p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .content-p-sub {
+    text-align: center;
+  }
+
+  .alpha-btn {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.5rem;
+  }
+
+  .spline-bg {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-h1 {
+    font-size: 2.3rem;
+  }
+
+  .content-sub {
+    font-size: 1rem;
+  }
+
+  .content-p {
+    font-size: 0.95rem;
+  }
+
+  .alpha-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+}

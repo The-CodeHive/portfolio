@@ -51,6 +51,10 @@ const Footer = () => {
           </div>
 
           <div className="contact-links-group">
+            <a href="https://drive.google.com/file/d/1KwGzgPXVebUthDbKAN7Eb1i2_FFSrLny/view?usp=sharing" target='_blank' className="contact-link">
+               Resume
+              <ArrowUpRight className="contact-link-icon" />
+            </a>
             <a href="https://www.instagram.com/jazz_.deep/" target='_blank' className="contact-link">
                Instagram 
               <ArrowUpRight className="contact-link-icon" />

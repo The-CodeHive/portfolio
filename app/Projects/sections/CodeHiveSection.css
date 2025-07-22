@@ -7,7 +7,22 @@
   background-color: var(--background);
   z-index: 10;
 }
+.codehive-text-highlighter{
+  color: #000000;
+  background-color: #ffbdcf;
+  padding: 3px;
+}.codehive-text-highlighter::selection {
+  background: #ff769b;
+  color: inherit; 
+}
 
+.tech-used {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 
 .codehive-section {
   position: relative;
@@ -19,7 +34,6 @@
   justify-content: center;
   z-index: 0;
 }
-
 
 .spline-bg {
   position: absolute;
@@ -33,17 +47,122 @@
   object-fit: cover;
 }
 
-.content {
-  font-size: 4rem;
-  font-weight: bold;
-  z-index: 1;
+/* New Content Block Styling */
+.content-container {
+  z-index: 2;
+  text-align: center;
+  width: 50%;
+  padding: 2rem;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-heading {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  pointer-events: auto;
+}
+
+.sub-heading {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  color: #fffcefd2;
+  pointer-events: auto;
+}
+.content-p-sub {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-top: 0.2rem;
+  pointer-events: auto;
+  align-items: center;
+}
+
+.description {
+  max-width: 95%;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  pointer-events: auto;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+.primary-btn,
+.secondary-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  image-rendering: pixelated;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  pointer-events: all;
+}
 
+/* === PRIMARY BUTTON === */
+.primary-btn {
+  color: #fff;
+  background: #000;
+  border: 4px solid #fff;
+  box-shadow:
+    4px 4px 0 #ff004d,
+    8px 8px 0 #000;
+}
 
+.primary-btn:hover {
+  background: #ff004d;
+  box-shadow:
+    2px 2px 0 #000,
+    4px 4px 0 #fff;
+  transform: translate(2px, 2px);
+}
 
+.primary-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 #000;
+}
+
+/* === SECONDARY BUTTON === */
+.secondary-btn {
+  background: black;
+  color: #ff004d;
+  border: 4px solid #ff004d;
+  box-shadow:
+    4px 4px 0 #000,
+    8px 8px 0 #ffb347;
+}
+
+.secondary-btn:hover {
+  background: #ff004d;
+  color: white;
+  box-shadow:
+    2px 2px 0 #000,
+    4px 4px 0 #fff;
+  transform: translate(2px, 2px);
+}
+
+.secondary-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 #000;
+}
 
 
 
@@ -91,3 +210,103 @@
   }
 }
 
+
+/*================================================================
+    Responsive Styles
+================================================================*/
+@media (max-width: 1024px) {
+  .content-container {
+    width: 70%;
+    padding: 1.5rem;
+    margin-right: 2rem;
+    text-align: center;
+  }
+
+  .main-heading {
+    font-size: 4rem;
+  }
+
+  .sub-heading {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .codehive-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 5rem;
+  }
+  .tech-used-wrapper{
+    padding: 2rem 1rem 2rem 1rem;
+  }
+
+  .content-container {
+    width: 90%;
+    padding: 1rem;
+    margin-right: 0;
+  }
+
+  .main-heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .sub-heading {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .content-p-sub {
+    text-align: center;
+  }
+ 
+  .button-group {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .spline-bg {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 2.5rem;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    font-size: 0.9rem;
+    padding: 1rem 1.2rem;
+  }
+}

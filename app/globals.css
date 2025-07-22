@@ -1803,7 +1803,7 @@ body::selection {
 .tech-used-wrapper {
   display: flex;
   gap: 1.5rem;
-  padding: 2rem 3.5rem 2rem 0;
+  padding: 2rem 3.5rem 2rem 3.5rem;
   align-items: center;
   justify-content: flex-start;
 }
@@ -1833,6 +1833,7 @@ body::selection {
   width: 48px;
   height: 48px;
   transition: transform 0.3s ease, filter 0.3s ease;
+  pointer-events: auto !important;
 }
 
 /* ✅ Responsive styles for small screens */
