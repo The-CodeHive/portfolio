@@ -60,7 +60,7 @@ const CodeHiveSection = () => {
       <div className="content-container" ref={contentRef}>
         <h1 className="main-heading">CodeHive</h1>
         <h2 className="sub-heading petit">Collaborate on code in real-time</h2>
-        <p className="description xanh">
+        <p className="description satoshi">
           Elevate your team’s coding experience. Code together seamlessly, in real-time.<br /> 
           <span className="codehive-text-highlighter xanhitalic">
             Build, debug, and grow as one — with speed, clarity, and precision.
@@ -76,8 +76,8 @@ const CodeHiveSection = () => {
         </div>
 
         <div className="button-group">
-          <button className="primary-btn">Visit Github Repo</button>
-          <button className="secondary-btn">Visit CodeHive</button>
+          <a className="secondary-btn" href="https://thecodehive.vercel.app" target="_blank">Visit CodeHive</a>
+          <a className="primary-btn" href="" target="_blank">Visit Github Repo</a>
         </div>
       </div>
     </section>

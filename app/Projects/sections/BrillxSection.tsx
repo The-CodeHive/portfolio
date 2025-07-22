@@ -55,7 +55,7 @@ const BrillxSection = () => {
       <div className="content-brillx" ref={contentRef}>
         <h1 className='content-h1'>BrillX</h1>
         <p className='content-sub petit'>Smarter learning starts with a single question.</p>
-        <div className='content-p xanh'>
+        <div className='content-p satoshi'>
           BrillX is your AI-powered learning companion — smart, intuitive, and always ready.
           Ask anything and get instant, crystal-clear answers tailored to you.
           <p className='content-p-sub'>
@@ -68,12 +68,13 @@ const BrillxSection = () => {
           <TechUsed
             tech={["Next.js", "Node.js", "Tailwind CSS", "Clerk", "MongoDB"]}
             direction="row"
+            color="#ffffffff"
           />
         </div>
 
         <div className='content-btns'>
-          <a href="https://github.com/your-repo" target="_blank" className="brillx-btn">Visit GitHub Repo</a>
           <a href="https://brillx.vercel.app" target="_blank" className="brillx-btn primary">Visit BrillX</a>
+          <a href="https://github.com/your-repo" target="_blank" className="brillx-btn">Visit GitHub Repo</a>
         </div>
       </div>
     </section>

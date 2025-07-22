@@ -11,7 +11,7 @@
   color: #000000;
   background-color: #fdfcd0;
   padding: 3px;
-
+  font-size: 1.2rem;
 }
 .brillx-text-highlighter::selection {
   background: #fffd84;

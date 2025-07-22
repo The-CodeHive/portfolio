@@ -1,0 +1,19 @@
+
+.connect-corner-div{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 60px;
+    background-color: var(--background);
+    z-index: 999999;
+}
+
+.connect-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+}

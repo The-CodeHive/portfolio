@@ -175,9 +175,9 @@ const Alpha: React.FC = () => {
           minus the sci-fi drama!
         </p>
         <TechUsed
-          tech={["Next.js", "React", "Tailwind CSS", "PostgreSQL", "Vercel"]}
-          direction="row"
-        />
+            tech={["LangChain", "OpenAI", "Pinecone", "Prisma", "tRPC"]}
+            direction="row"
+          />
         <button
           className="alpha-feature-button satoshi"
           onClick={() =>

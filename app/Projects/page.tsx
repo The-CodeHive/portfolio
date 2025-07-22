@@ -1,7 +1,6 @@
 "use client";
 
-
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Spline from '@splinetool/react-spline/next';
 import Spiral from '@/components/interactive-elements/Spiral'
 import FooterSecondary from '@/components/FooterSecondry'
@@ -14,10 +13,24 @@ import BrillxSection from './sections/BrillxSection';
 import CodeHiveSection from './sections/CodeHiveSection';
 import AlphaSection from './sections/AlphaSection';
 import LetMeShow from './sections/LetMeShow';
+import Connect from './sections/Connect';
 
 gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Track viewport width
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize(); // initialize on mount
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // GSAP scroll animation for the showcase
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -39,20 +52,20 @@ const Projects = () => {
       y: 0,
       duration: 0.5,
       ease: "power1.out"
-    },
-    "+=0"
-    );
+    }, "+=0");
 
     return () => {
       tl.scrollTrigger?.kill();
       tl.kill();
     };
   }, []);
-  const sectionRef = useRef(null);
-  const h1Ref = useRef(null);
-  const h2Ref = useRef(null);
-  const pRef = useRef(null);
-  const btnRef = useRef(null);
+
+  // Entry animations
+  const sectionRef = useRef<HTMLElement>(null);
+  const h1Ref = useRef<HTMLHeadingElement>(null);
+  const h2Ref = useRef<HTMLHeadingElement>(null);
+  const pRef = useRef<HTMLParagraphElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 0.5, ease: 'power3.out' } });
@@ -96,21 +109,25 @@ const Projects = () => {
         </div>
         <div className='Projects-main-name million-feeling'>Jagdeep Singh</div>
         <div className='Projects-main-Content'>
-          <div className="Projects-main-heading ">
+          <div className="Projects-main-heading">
             <h1 className='project-line1 satoshi'>Projects</h1>
-            <p className='project-line2 xanh'>
-            </p>
+            <p className='project-line2 xanh'></p>
           </div>
         </div>
         <img src="/images/project.png" alt="Projects" className='project-img' />
       </section>
-        <ProjectSection/>
-        <TechUsed/>
-        <LetMeShow/>
-        <BrillxSection/>
-        <CodeHiveSection/>
-        <AlphaSection/>
-      <FooterSecondary />
+
+      <ProjectSection/>
+      <TechUsed/>
+      <LetMeShow/>
+      <BrillxSection/>
+      <CodeHiveSection/>
+      <AlphaSection/>
+
+      {isMobile
+        ? <FooterSecondary />
+        : <Connect />
+      }
     </main>
   )
 }

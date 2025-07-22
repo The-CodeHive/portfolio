@@ -59,7 +59,7 @@ const AlphaSection = () => {
       <div className="content-alpha" ref={contentRef}>
         <h1 className="content-h1">Alpha</h1>
         <p className="content-sub petit">Think faster. Iterate smarter. Launch intelligently.</p>
-          <div className="content-p xanh">
+          <div className="content-p satoshi">
             Alpha is your AI-powered workspace for product ideation and validation.
             Brainstorm, prototype, and refine MVPs with natural language — all in real time.
             <p className="content-p-sub">
@@ -73,6 +73,7 @@ const AlphaSection = () => {
             <TechUsed
               tech={["LangChain", "OpenAI", "Pinecone", "Prisma", "tRPC"]}
               direction="row"
+              color="#ffffffff"
             />
           </div>
 

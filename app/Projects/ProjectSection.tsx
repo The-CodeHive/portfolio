@@ -22,7 +22,7 @@ const ProjectSection = () => {
       start: 'top top',
       onEnter: () => {
         gsap.to(':root', {
-          '--background': '#000000',
+          '--background': '#000000ff',
           '--foreground': '#ffffffff',
           duration: 1.2,
           ease: 'power2.inOut',
