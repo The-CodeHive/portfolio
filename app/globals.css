@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 @font-face {
   font-family: 'Million Feeling';
   src: url('/fonts/MillionFeeling.otf') format('opentype');
@@ -91,6 +92,16 @@ body::selection {
 /* Xanh Mono */
 .xanh { font-family: "Xanh Mono", monospace; }
 .xanhitalic { font-family: "Xanh Mono", monospace; font-style: italic; }
+
+/*Cormorant Garamond*/
+.cormorant { font-family: 'Cormorant Garamond', serif; }
+.cormorantthin { font-family: 'Cormorant Garamond', serif; font-weight: 300; }         /* Thin (Lightest available) */
+.cormorantextralight { font-family: 'Cormorant Garamond', serif; font-weight: 300; }   /* Reusing 300 */
+.cormorantlight { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+.cormorantregular { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+.cormorantmedium { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+.cormorantbold { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+.cormorantblack { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
 
 /* Jetbrains Mono */
 .jetbrains{ font-family: 'JetBrains Mono', monospace;}

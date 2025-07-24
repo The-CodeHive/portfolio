@@ -14,6 +14,7 @@ import CodeHiveSection from './sections/CodeHiveSection';
 import AlphaSection from './sections/AlphaSection';
 import LetMeShow from './sections/LetMeShow';
 import Connect from './sections/Connect';
+import Upcoming from './sections/Upcoming';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -123,6 +124,7 @@ const Projects = () => {
       <BrillxSection/>
       <CodeHiveSection/>
       <AlphaSection/>
+      <Upcoming />
 
       {isMobile
         ? <FooterSecondary />
