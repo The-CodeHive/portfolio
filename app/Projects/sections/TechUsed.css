@@ -37,16 +37,28 @@
   width: 100%;
   height: 100%;
 }
+
 @media (max-width: 639px) {
   .gravity-wrapper {
     pointer-events: none;
     touch-action: none;
     opacity: 1;
   }
+
+  .mobile-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    max-height: 60vh;
+    overflow: hidden;
+  }
 }
 
 .tech-badge {
-  font-family: "Satoshi", sans-serif;;
+  font-family: "Satoshi", sans-serif;
   font-size: 1.1rem;
   color: white;
   border-radius: 25px;
