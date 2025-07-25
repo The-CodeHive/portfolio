@@ -7,7 +7,7 @@ html.light {
 }
 
 html.dark {
-  --project-background: #181f26;
+  --project-background: #182326;
   --project-foreground: #fffdf1;
   
   transition: background-color 1s ease, color 1s ease;
