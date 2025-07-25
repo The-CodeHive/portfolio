@@ -91,9 +91,9 @@
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 12px 5px rgba(255, 255, 255, 0.15);
 }
 
 .contact-form input:focus::placeholder,
@@ -116,15 +116,16 @@
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .footer-btn.sent {
-  background-color: #00c896;
+  background-color: #00c89600;
   border: 1px solid #00c896;
-  color: white;
+  color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   transition: background 0.3s ease;
 }
+
 
 
 .footer-btn::before {
@@ -146,7 +147,7 @@
 .footer-btn:hover {
   background-color: #ffffff00;
   transform: scale(1.02);
-  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.153);
+  box-shadow: 0 0 20px 5px rgba(154, 176, 255, 0.348);
 }
 
 .footer-btn:active {
@@ -176,7 +177,7 @@
 
 .project-footer-role {
   font-size: 1rem;
-  color: #ffffff95;
+  color: #ffffff;
 }
 
 .project-footer-icons {
