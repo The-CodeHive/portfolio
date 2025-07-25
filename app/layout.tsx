@@ -42,23 +42,27 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="page-wrapper" cz-shortcut-listen="true">
-        <Providers>
-          <ClientLenisWrapper>
-            <GooeyNav
-              items={navItems}
-              particleCount={15}
-              particleDistances={[90, 10]}
-              particleR={100}
-              animationTime={600}
-              timeVariance={300}
-              colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-            />
-            <main>{children}</main>
-          </ClientLenisWrapper>
-        </Providers>
-      </body>
-    </html>
-  )
+  <html lang="en" suppressHydrationWarning>
+    <head>
+      <meta name="google-site-verification" content="google825f646c84edf44b.html" />
+    </head>
+    <body className="page-wrapper" cz-shortcut-listen="true">
+      <Providers>
+        <ClientLenisWrapper>
+          <GooeyNav
+            items={navItems}
+            particleCount={15}
+            particleDistances={[90, 10]}
+            particleR={100}
+            animationTime={600}
+            timeVariance={300}
+            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+          />
+          <main>{children}</main>
+        </ClientLenisWrapper>
+      </Providers>
+    </body>
+  </html>
+)
+
 }
