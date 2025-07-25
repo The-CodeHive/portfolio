@@ -4,7 +4,7 @@
   right: 0;
   width: 200px;
   height: 60px;
-  background-color: var(--background);
+  background-color: var(--project-background);
   z-index: 10;
 }
 .codehive-text-highlighter{
@@ -187,7 +187,7 @@
   right: 0;
   width: 200px;
   height: 60px;
-  background-color: var(--background);
+  background-color: var(--project-background);
   z-index: 999999;
 }
 .desktop-only {

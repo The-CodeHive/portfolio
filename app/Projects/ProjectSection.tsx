@@ -22,8 +22,8 @@ const ProjectSection = () => {
       start: 'top top',
       onEnter: () => {
         gsap.to(':root', {
-          '--background': '#000000ff',
-          '--foreground': '#ffffffff',
+          '--project-background': '#000000ff',
+          '--project-foreground': '#ffffffff',
           duration: 1.2,
           ease: 'power2.inOut',
         });
@@ -31,8 +31,8 @@ const ProjectSection = () => {
       onLeaveBack: () => {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         gsap.to(':root', {
-          '--background': isDarkMode ? '#181f26' : '#fffdf1',
-          '--foreground': isDarkMode ? '#fffdf1' : '#281c1c',
+          '--project-background': isDarkMode ? '#181f26' : '#fffdf1',
+          '--project-foreground': isDarkMode ? '#fffdf1' : '#281c1c',
           duration: 1.2,
           ease: 'power2.inOut',
         });

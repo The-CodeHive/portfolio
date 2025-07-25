@@ -1,21 +1,21 @@
 
 html.light {
-  --background: #fffdf1;
-  --foreground: #281c1c;
+  --project-background: #fffdf1;
+  --project-foreground: #281c1c;
   
   transition: background-color 1s ease, color 1s ease;
 }
 
 html.dark {
-  --background: #181f26;
-  --foreground: #fffdf1;
+  --project-background: #181f26;
+  --project-foreground: #fffdf1;
   
   transition: background-color 1s ease, color 1s ease;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--project-background);
+  color: var(--project-foreground);
 }
 
 .project-main{

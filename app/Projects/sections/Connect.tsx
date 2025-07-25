@@ -35,7 +35,7 @@ const Connect = () => {
             <input className="xanh" type="email" name="email" placeholder="Your Email" required />
             <ValidationError prefix="Email" field="email" errors={state.errors} />
 
-            <textarea className="xanh" name="message" placeholder="Your Message" rows={5} required />
+            <textarea className="xanh" name="message" placeholder="Your Message" rows={2} required />
             <ValidationError prefix="Message" field="message" errors={state.errors} />
 
             <button className={`footer-btn satoshi ${sent ? 'sent' : ''}`} type="submit" disabled={state.submitting}>

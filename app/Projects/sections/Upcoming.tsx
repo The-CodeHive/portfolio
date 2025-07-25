@@ -49,14 +49,14 @@ export default function Upcoming({ baseVelocity = -3 }: { baseVelocity?: number 
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          stay tuned
+          If you think this is all I’ve got, you’re in for a surprise.
         </motion.p>
       </div>
 
-      <motion.div className="marquee-track" style={{ x }}>
+      <motion.div className="marquee-track xanh" style={{ x }}>
         {Array.from({ length: 10 }).map((_, i) => (
           <span key={i} className="marquee-text">
-            Way more Coming Ahead —
+            Way more Coming ahead ——
           </span>
         ))}
       </motion.div>
