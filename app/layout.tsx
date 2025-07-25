@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
   <html lang="en" suppressHydrationWarning>
     <head>
-      <meta name="google-site-verification" content="google825f646c84edf44b.html" />
+      <meta name="google-site-verification" content="byHC2E3N1aCFmMa9AtACMeOyjbomnPMoVA_lPEIM_ZM" />
     </head>
     <body className="page-wrapper" cz-shortcut-listen="true">
       <Providers>
