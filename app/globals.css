@@ -1290,16 +1290,16 @@ body::selection {
 /* Small phones (≤480px) */
 @media (max-width: 480px) {
   .brillx-feature-heading h1 {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
   }
 
   .brillx-feature-heading h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .brillx-feature-description,
   .brillx-feature-year {
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 0 0.5rem;
   }
 
@@ -1307,6 +1307,7 @@ body::selection {
     max-width: none;
     width: 100%;
     height: auto;
+    
   }
 }
 
@@ -1477,20 +1478,21 @@ body::selection {
 
 @media (max-width: 480px) {
   .feature-heading h1 {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
   }
   .feature-heading h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .feature-description,
   .feature-year {
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 0 0.5rem;
   }
   .feature-image-container {
     max-width: none;
     width: 100%;
     height: auto;
+    margin-top: 2rem;
   }
 }
 
@@ -1713,16 +1715,16 @@ body::selection {
 /* Small phones (≤480px) */
 @media (max-width: 480px) {
   .alpha-feature-heading h1 {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
   }
 
   .alpha-feature-heading h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .alpha-feature-description,
   .alpha-feature-year {
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 0 0.5rem;
   }
 
@@ -1730,6 +1732,7 @@ body::selection {
     max-width: none;
     width: 100%;
     height: auto;
+    margin-top: 2rem;
   }
 }
 

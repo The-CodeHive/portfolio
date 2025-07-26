@@ -11,12 +11,22 @@ interface SplineSceneProps {
 
 export function SplineScene({ scene, className }: SplineSceneProps) {
   const [showSpline, setShowSpline] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(true)
 
   useEffect(() => {
-    // Delay mounting the spline scene slightly to avoid blocking paint
-    const timeout = setTimeout(() => setShowSpline(true), 200) // tweak delay as needed
+    // Check if desktop
+    const checkDesktop = () => setIsDesktop(typeof window !== 'undefined' && window.innerWidth >= 1024)
+    checkDesktop()
+    window.addEventListener('resize', checkDesktop)
+    return () => window.removeEventListener('resize', checkDesktop)
+  }, [])
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setShowSpline(true), 200) 
     return () => clearTimeout(timeout)
   }, [])
+
+  if (!isDesktop) return null
 
   return (
     <div className={className}>

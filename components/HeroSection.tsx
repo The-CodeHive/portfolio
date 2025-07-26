@@ -16,7 +16,7 @@ export default function HeroSection() {
     console.log('Animation completed!');
     setTimeout(() => {
       setShowParagraph(true);
-    }, 1500);
+    }, 800);
   };
   useEffect(() => {
     gsap.to(".hero-spiral", {

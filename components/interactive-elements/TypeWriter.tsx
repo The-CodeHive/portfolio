@@ -10,9 +10,9 @@ interface TypeWriterProps {
 
 const TypeWriter: React.FC<TypeWriterProps> = ({
   words,
-  typingSpeed = 200,
-  deletingSpeed = 100,
-  pause = 4000,
+  typingSpeed = 100,
+  deletingSpeed = 50,
+  pause = 2000,
 }) => {
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);

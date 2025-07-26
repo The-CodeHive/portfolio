@@ -56,13 +56,13 @@ const Aboutme: React.FC = () => {
         <div className="aboutme-content xanh">
           <div className="left-text">
             <p>
-              <strong>I design at the intersection of strategy, culture, and craft.</strong>
-              I’ve always been making things and inventing ways to improve my surroundings—solving tangible needs with beautiful solutions sits at my core. My work spans brand systems, digital experiences, and visual narratives for startups, institutions, and global brands: whether I’m building from scratch or evolving what already exists, I balance big-picture thinking and rapid iteration with meticulous attention to detail.
+            <strong>I design where strategy meets culture and craft.<br/></strong>
+            I create thoughtful, impactful work—blending brand, digital, and storytelling to solve real problems with beautiful solutions. Whether starting fresh or refining the existing, I combine big-picture vision with sharp detail.
             </p>
           </div>
           <div className="right-text">
             <p>
-              Collaboration fuels me—working cross‑functionally to deliver far better outcomes than I ever could alone—and I’m always improving, growing, and executing to the highest standard possible. Every project I take on is tethered to a larger mission: connecting craft to impact, and leaving the world better than I found it.
+            I thrive on collaboration—building better together. I'm always learning, refining, and pushing for excellence. Every project is a chance to connect creativity with impact and leave things better than I found them.
             </p>
             <a href="/About" className="about-link xanhitalic">
                <svg
