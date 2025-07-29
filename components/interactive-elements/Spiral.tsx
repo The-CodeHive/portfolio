@@ -1,7 +1,8 @@
 "use client"
 
 import type React from "react"
-import { useMemo, useId } from "react"
+import { useMemo, useId, useEffect, useState } from "react"
+import { useViewportDetection } from "@/lib/utils"
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5))
 
@@ -49,6 +50,8 @@ interface SpiralProps {
   height?: number
   className?: string
   style?: React.CSSProperties
+  threshold?: number
+  rootMargin?: string
 }
 
 const Spiral: React.FC<SpiralProps> = ({
@@ -67,8 +70,22 @@ const Spiral: React.FC<SpiralProps> = ({
   height = 400,
   className = "",
   style = {},
+  threshold = 0.1,
+  rootMargin = '50px',
 }) => {
+  const { ref, isInViewport } = useViewportDetection<HTMLDivElement>(threshold, rootMargin)
+  const [shouldRender, setShouldRender] = useState(false)
+
+  useEffect(() => {
+    if (isInViewport) {
+      const timeout = setTimeout(() => setShouldRender(true), 100)
+      return () => clearTimeout(timeout)
+    }
+  }, [isInViewport])
+
   const spiralData = useMemo(() => {
+    if (!shouldRender) return []
+    
     const maxRadius = Math.min(width, height) / 2 - dotRadius * sizeMax
     const centerX = width / 2
     const centerY = height / 2
@@ -93,7 +110,7 @@ const Spiral: React.FC<SpiralProps> = ({
     }
 
     return spiralPoints
-  }, [points, width, height, dotRadius, sizeMax, duration])
+  }, [points, width, height, dotRadius, sizeMax, duration, shouldRender])
 
   const uniqueId = useId()
   const gradientId = `spiral-gradient-${uniqueId}`
@@ -113,44 +130,46 @@ const Spiral: React.FC<SpiralProps> = ({
   }
 
   return (
-    <div className={className} style={containerStyle}>
-      <svg width={width} height={height} style={{ overflow: "visible" }}>
-        {selectedGradient && (
-          <defs>
-            <radialGradient id={gradientId} cx="50%" cy="50%" r="50%">
-              {selectedGradient.map((color, index) => (
-                <stop
-                  key={index}
-                  offset={`${(index / (selectedGradient.length - 1)) * 100}%`}
-                  stopColor={color}
-                />
-              ))}
-            </radialGradient>
-          </defs>
-        )}
+    <div ref={ref} className={className} style={containerStyle}>
+      {shouldRender && (
+        <svg width={width} height={height} style={{ overflow: "visible" }}>
+          {selectedGradient && (
+            <defs>
+              <radialGradient id={gradientId} cx="50%" cy="50%" r="50%">
+                {selectedGradient.map((color, index) => (
+                  <stop
+                    key={index}
+                    offset={`${(index / (selectedGradient.length - 1)) * 100}%`}
+                    stopColor={color}
+                  />
+                ))}
+              </radialGradient>
+            </defs>
+          )}
 
-        {spiralData.map((point, index) => (
-          <circle
-            key={index} 
-            cx={point.x}
-            cy={point.y}
-            r={dotRadius}
-            fill={selectedGradient ? `url(#${gradientId})` : selectedColor}
-            className={pulseEffect ? "spiral-dot" : ""}
-            style={
-              pulseEffect
-                ? {
-                    
-                    opacity: 0,
-                    animationDelay: `${point.animationDelay}s`,
-                  }
-                : { opacity: opacityMax }
-            }
-          />
-        ))}
-      </svg>
+          {spiralData.map((point, index) => (
+            <circle
+              key={index} 
+              cx={point.x}
+              cy={point.y}
+              r={dotRadius}
+              fill={selectedGradient ? `url(#${gradientId})` : selectedColor}
+              className={pulseEffect ? "spiral-dot" : ""}
+              style={
+                pulseEffect
+                  ? {
+                      
+                      opacity: 0,
+                      animationDelay: `${point.animationDelay}s`,
+                    }
+                  : { opacity: opacityMax }
+              }
+            />
+          ))}
+        </svg>
+      )}
 
-      {pulseEffect && (
+      {pulseEffect && shouldRender && (
         <style jsx global>{`
           .spiral-dot {
             transform-origin: center;
