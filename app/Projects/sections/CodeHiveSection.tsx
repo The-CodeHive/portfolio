@@ -51,7 +51,7 @@ const CodeHiveSection = () => {
 
   return (
     <section className="codehive-section satoshi">
-      <div className="corner-div" />
+      
 
       <div className="spline-bg">
         <SplineScene scene="https://draft.spline.design/ul8stQTmgK6DrGuO/scene.splinecode" />

@@ -12,14 +12,20 @@ interface SplineSceneProps {
   rootMargin?: string
 }
 
-export function SplineScene({ scene, className, threshold = 0.1, rootMargin = '50px' }: SplineSceneProps) {
+export function SplineScene({
+  scene,
+  className,
+  threshold = 0.1,
+  rootMargin = '50px'
+}: SplineSceneProps) {
   const [showSpline, setShowSpline] = useState(false)
   const [isDesktop, setIsDesktop] = useState(true)
   const { ref, isInViewport } = useViewportDetection<HTMLDivElement>(threshold, rootMargin)
 
   useEffect(() => {
     // Check if desktop
-    const checkDesktop = () => setIsDesktop(typeof window !== 'undefined' && window.innerWidth >= 1024)
+    const checkDesktop = () =>
+      setIsDesktop(typeof window !== 'undefined' && window.innerWidth >= 1024)
     checkDesktop()
     window.addEventListener('resize', checkDesktop)
     return () => window.removeEventListener('resize', checkDesktop)
@@ -36,7 +42,7 @@ export function SplineScene({ scene, className, threshold = 0.1, rootMargin = '5
   if (!isDesktop) return null
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={`relative ${className || ''}`}>
       {isInViewport && showSpline ? (
         <Suspense
           fallback={
@@ -52,6 +58,14 @@ export function SplineScene({ scene, className, threshold = 0.1, rootMargin = '5
           <span className="loader"></span>
         </div>
       )}
+
+      
+      <div
+        className="absolute bottom-0 right-0 bg-gray-800"
+        style={{ width: '200px', height: '60px' }}
+      >
+        
+      </div>
     </div>
   )
 }

@@ -18,7 +18,7 @@ const Connect = () => {
 
   return (
     <div className="connect-page">
-      <div className="connect-corner-div" />
+      
 
       <div className="spline-background">
         <SplineScene scene="https://prod.spline.design/Hzr1sU4wFkHl5aTe/scene.splinecode" />

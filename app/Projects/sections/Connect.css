@@ -5,15 +5,7 @@
   overflow: hidden;
 }
 
-.connect-corner-div {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 200px;
-  height: 60px;
-  background-color: var(--project-background);
-  z-index: 9;
-}
+
 
 .spline-background {
   position: absolute;

@@ -51,7 +51,6 @@ const AlphaSection = () => {
 
   return (
     <section className="alpha-section satoshi">
-      <div className="alpha-corner-div" />
       <div className="spline-bg">
         <SplineScene scene="https://draft.spline.design/CSobRiqSEmGf5HlM/scene.splinecode" />
       </div>
