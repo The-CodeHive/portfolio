@@ -61,7 +61,7 @@ export function SplineScene({
 
       
       <div
-        className="absolute bottom-0 right-0 bg-gray-800"
+        className="absolute bottom-0 right-0"
         style={{ width: '200px', height: '60px' }}
       >
         
