@@ -58,18 +58,11 @@ export function SplineScene({
         </div>
       )}
 
-<<<<<<< HEAD
-      
+      {/* Corner div inside container */}
       <div
-        className="absolute bottom-0 right-0"
+        className="show-corner-div absolute bottom-0 right-0"
         style={{ width: '200px', height: '60px' }}
-      >
-        
-      </div>
-=======
-      {/* Corner div absolutely inside this container */}
-      <div className="show-corner-div" />
->>>>>>> a285644 (added the corner div)
+      />
     </div>
   )
 }
