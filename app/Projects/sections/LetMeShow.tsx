@@ -5,7 +5,7 @@ import './CodeHiveSection.css';
 const LetMeShow = () => {
   return (
     <main className='show-section'>
-      <div className="show-corner-div" />
+      
 
       <div className="spline-bg desktop-only">
         <SplineScene scene="https://draft.spline.design/a-KxmuTJLczMnSES/scene.splinecode" />

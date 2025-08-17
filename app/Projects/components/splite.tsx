@@ -2,6 +2,7 @@
 
 import { Suspense, lazy, useEffect, useState } from 'react'
 import { useViewportDetection } from '@/lib/utils'
+import './SplineScene.css'   // 👈 import css file
 
 const LazySpline = lazy(() => import('@splinetool/react-spline'))
 
@@ -23,7 +24,6 @@ export function SplineScene({
   const { ref, isInViewport } = useViewportDetection<HTMLDivElement>(threshold, rootMargin)
 
   useEffect(() => {
-    // Check if desktop
     const checkDesktop = () =>
       setIsDesktop(typeof window !== 'undefined' && window.innerWidth >= 1024)
     checkDesktop()
@@ -31,7 +31,6 @@ export function SplineScene({
     return () => window.removeEventListener('resize', checkDesktop)
   }, [])
 
-  // Start loading spline when in viewport
   useEffect(() => {
     if (isInViewport) {
       const timeout = setTimeout(() => setShowSpline(true), 100)
@@ -42,7 +41,7 @@ export function SplineScene({
   if (!isDesktop) return null
 
   return (
-    <div ref={ref} className={`relative ${className || ''}`}>
+    <div ref={ref} className={`spline-container ${className || ''}`}>
       {isInViewport && showSpline ? (
         <Suspense
           fallback={
@@ -59,6 +58,7 @@ export function SplineScene({
         </div>
       )}
 
+<<<<<<< HEAD
       
       <div
         className="absolute bottom-0 right-0"
@@ -66,6 +66,10 @@ export function SplineScene({
       >
         
       </div>
+=======
+      {/* Corner div absolutely inside this container */}
+      <div className="show-corner-div" />
+>>>>>>> a285644 (added the corner div)
     </div>
   )
 }
