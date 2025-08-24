@@ -77,7 +77,7 @@ const CodeHiveSection = () => {
 
         <div className="button-group">
           <a className="secondary-btn" href="https://thecodehive.vercel.app" target="_blank">Visit CodeHive</a>
-          <a className="primary-btn" href="" target="_blank">Visit Github Repo</a>
+          <a className="primary-btn" href="https://github.com/The-CodeHive/main-project" target="_blank">Visit Github Repo</a>
         </div>
       </div>
     </section>

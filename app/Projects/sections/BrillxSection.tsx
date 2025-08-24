@@ -73,7 +73,7 @@ const BrillxSection = () => {
 
         <div className='content-btns'>
           <a href="https://brillx.vercel.app" target="_blank" className="brillx-btn primary">Visit BrillX</a>
-          <a href="https://github.com/your-repo" target="_blank" className="brillx-btn">Visit GitHub Repo</a>
+          <a href="https://github.com/jagdep-singh/brillx" target="_blank" className="brillx-btn">Visit GitHub Repo</a>
         </div>
       </div>
     </section>
