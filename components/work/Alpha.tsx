@@ -12,7 +12,7 @@ const Alpha: React.FC = () => {
   const linkLayerRef = useRef<HTMLAnchorElement>(null);
   const containerRef = useRef<HTMLElement>(null);
 
-  const projectLink = "https://example.com";
+  const projectLink = "";
   const [isOverlayVisible, setOverlayVisible] = useState(false);
 
   // Hover-follow overlay effect
@@ -151,7 +151,7 @@ const Alpha: React.FC = () => {
           }`}
           ref={floatingRef}
         >
-          Visit Alpha
+          Just a Model 😅
         </div>
       )}
 
