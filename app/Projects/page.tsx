@@ -6,6 +6,8 @@ import Spiral from '@/components/interactive-elements/Spiral'
 import FooterSecondary from '@/components/FooterSecondry'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// @ts-ignore
 import './project.css'
 import ProjectSection from './ProjectSection';
 import TechUsed from './sections/TechUsed';

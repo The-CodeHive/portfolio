@@ -23,7 +23,7 @@ const FooterSecondary = () => {
           <p className="footer-title">Frontend Engineer & Designer</p>
 
           <div className="contact-links-group" style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: '1rem', marginTop: '1rem' }}>
-            <a href="https://www.linkedin.com/in/jagdeep-singh-812986249/" target="_blank" className="contact-link" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/jagdeep-singh-3532b818b" target="_blank" className="contact-link" aria-label="LinkedIn">
               <Linkedin size={25} />
             </a>
             <a href="https://github.com/jagdep-singh" target="_blank" className="contact-link" aria-label="GitHub">

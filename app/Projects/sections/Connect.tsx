@@ -52,7 +52,7 @@ const Connect = () => {
             </div>
 
             <div className="project-footer-icons">
-              <a href="https://www.linkedin.com/in/jagdeep-singh-812986249/" target="_blank"><Linkedin size={22} /></a>
+              <a href="https://www.linkedin.com/in/jagdeep-singh-3532b818b" target="_blank"><Linkedin size={22} /></a>
               <a href="https://github.com/jagdep-singh" target="_blank"><Github size={22} /></a>
               <a href="https://www.instagram.com/jazz_.deep/" target="_blank"><Instagram size={22} /></a>
               <a href="https://www.threads.com/@jazz_.deep" target="_blank"><ArrowUpRight size={22} /></a>

@@ -54,7 +54,7 @@ const CodeHiveSection = () => {
       
 
       <div className="spline-bg">
-        <SplineScene scene="https://draft.spline.design/ul8stQTmgK6DrGuO/scene.splinecode" />
+        <SplineScene scene="https://prod.spline.design/46KHOX7SZq88dKSm/scene.splinecode" />
       </div>
 
       <div className="content-container" ref={contentRef}>

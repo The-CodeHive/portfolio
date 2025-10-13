@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
 
           <div className="contact-links-group">
-            <a href="https://www.linkedin.com/in/jagdeep-singh-812986249/" target='_blank' className="contact-link">
+            <a href="https://www.linkedin.com/in/jagdeep-singh-3532b818b" target='_blank' className="contact-link">
                LinkedIn 
               <ArrowUpRight className="contact-link-icon" />
             </a>

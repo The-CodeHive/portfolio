@@ -7,7 +7,7 @@ html.light {
 }
 
 html.dark {
-  --background: #151720;
+  --background: #1b1f2e;
   --foreground: #fffdf1;
   --card-bg: rgba(0, 0, 0, 0);
   --accent-gray: #9a9a9a;

@@ -31,7 +31,7 @@ const ProjectSection = () => {
       onLeaveBack: () => {
         const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         gsap.to(':root', {
-          '--project-background': isDarkMode ? '#151720' : '#fffdf1',
+          '--project-background': isDarkMode ? '#1b1f2e' : '#fffdf1',
           '--project-foreground': isDarkMode ? '#fffdf1' : '#281c1c',
           duration: 1.2,
           ease: 'power2.inOut',
